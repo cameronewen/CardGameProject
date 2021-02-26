@@ -1,12 +1,14 @@
 package CardGamePackage;
 
 public class Card {
+
+// Fields 
 	
 	private Rank rank;
 	private Suit suit;
 	private int value;
 	
-	//Card Constructor
+// Card Constructor
 	
 	public Card(Rank rank, Suit suit) {
 		
@@ -16,6 +18,8 @@ public class Card {
 		
 	}
 
+// Card Methods
+	
 	private int valueFromRank(Rank rank) {
 		
 		int cardValue;
@@ -62,7 +66,7 @@ public class Card {
 		return cardValue;
 	}
 	
-//------GETTERS AND SETTERS-----------------------------------------------------------
+// Getters and Setters
 	
 	// Rank
 	
