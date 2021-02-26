@@ -12,40 +12,42 @@ public class Main {
 		Menu(scnr);
 		
 		scnr.close();
+		
 	}
 	
 	// patch note: adjusted menu to use a method to take input to avoid errors
 	// and changed the if to a switch statement so we can easily add more options.
 	// - cam
 	
-	public static void  Menu(Scanner scnr) {
+	public static void Menu(Scanner scnr) {
 		
 		int menuSelection; 
 		
 		System.out.println("Menu:");
 		System.out.println("> Gameplay and Rules (1)\n"
-					+ "> Deal hand (2)\n" 
-					+ "> Exit (3)\n");
+				 + "> Deal hand (2)\n" 
+				 + "> Exit (3)\n");
 		
-        menuSelection = getIntFromScannerRanged(scnr, 1, 3);
+        	menuSelection = getIntFromScannerRanged(scnr, 1, 3);
         
-        switch(menuSelection) {
-        
-        case 1:
-        	System.out.println("Gameplay and Rules");
-        	break;
-        	
-        case 2:
-        	System.out.println("Start game.");
-        	break;
-        	
-        case 3:
-        	System.out.println("Exit Game");
-        	break;
-        	
-        default:
-        	System.out.println("Something went wrong with the input scanner.");
-        }
+		switch(menuSelection) {
+
+			case 1:
+				System.out.println("Gameplay and Rules");
+				break;
+
+			case 2:
+				System.out.println("Start game.");
+				break;
+
+			case 3:
+				System.out.println("Exit Game");
+				break;
+
+			default:
+				System.out.println("Something went wrong with the input scanner.");
+
+		}
         
 		
 		scnr.close(); 
@@ -72,7 +74,7 @@ public class Main {
 		
 		do {
 	    	
-	    	userInputString = scnr.nextLine();
+	    		userInputString = scnr.nextLine();
 			System.out.println();
 			
 			try {
@@ -88,7 +90,7 @@ public class Main {
 	    
 		} while (userNum < low || userNum > high);
         
-        return userNum;
+        	return userNum;
         
 	}
 	
