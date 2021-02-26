@@ -23,9 +23,9 @@ public class Main {
 		int menuSelection; 
 		
 		System.out.println("Menu:");
-		System.out.println(	"> Gameplay and Rules (1)\n"
-						 + "> Deal hand (2)\n" 
-						 + "> Exit (3)\n");
+		System.out.println("> Gameplay and Rules (1)\n"
+					+ "> Deal hand (2)\n" 
+					+ "> Exit (3)\n");
 		
         menuSelection = getIntFromScannerRanged(scnr, 1, 3);
         
@@ -70,23 +70,23 @@ public class Main {
 		
 		System.out.println("Enter an integer between " + low + " and " + high + ".");
 		
-        do {
-        	
-			userInputString = scnr.nextLine();
-    		System.out.println();
-    		
-    		try {
-    			
-    			userNum = Integer.parseInt(userInputString.replaceAll(" ", ""));
-    					
-    		} catch (NumberFormatException e) {
-    			
-    			System.out.println("Invalid input, please enter a int between " + low + " and " + high + ".");
-    			System.out.print(">");
-    			
-    		}
-        
-        } while (userNum < low || userNum > high);
+		do {
+	    	
+	    	userInputString = scnr.nextLine();
+			System.out.println();
+			
+			try {
+				
+				userNum = Integer.parseInt(userInputString.replaceAll(" ", ""));
+						
+			} catch (NumberFormatException e) {
+				
+				System.out.println("Invalid input, please enter a int between " + low + " and " + high + ".");
+				System.out.print(">");
+				
+			}
+	    
+		} while (userNum < low || userNum > high);
         
         return userNum;
         
