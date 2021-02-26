@@ -28,8 +28,8 @@ public class Main {
 				 + "> Deal hand (2)\n" 
 				 + "> Exit (3)\n");
 		
-        	menuSelection = getIntFromScannerRanged(scnr, 1, 3);
-        
+		menuSelection = getIntFromScannerRanged(scnr, 1, 3);
+		        
 		switch(menuSelection) {
 
 			case 1:
@@ -73,8 +73,8 @@ public class Main {
 		System.out.println("Enter an integer between " + low + " and " + high + ".");
 		
 		do {
-	    	
-	    		userInputString = scnr.nextLine();
+			
+	    	userInputString = scnr.nextLine();
 			System.out.println();
 			
 			try {
