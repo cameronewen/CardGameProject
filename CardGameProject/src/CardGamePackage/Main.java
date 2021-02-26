@@ -23,7 +23,7 @@ public class Main {
 		int menuSelection; 
 		
 		System.out.println("Menu:");
-		System.out.println("> Gameplay and Rules (1)\n"
+		System.out.println(	"> Gameplay and Rules (1)\n"
 						 + "> Deal hand (2)\n" 
 						 + "> Exit (3)\n");
 		
@@ -69,6 +69,7 @@ public class Main {
 		
 		
 		System.out.println("Enter an integer between " + low + " and " + high + ".");
+		
         do {
         	
 			userInputString = scnr.nextLine();
