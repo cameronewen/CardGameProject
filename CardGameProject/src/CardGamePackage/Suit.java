@@ -1,6 +1,6 @@
 package CardGamePackage;
 
-public enum Suits {
+public enum Suit {
 	
     SPADES, 
     HEARTS, 

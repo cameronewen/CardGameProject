@@ -1,8 +1,41 @@
 package CardGamePackage;
 
 public class Card {
-	int cardDeck[][] = {{13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1}, {13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1}, 
-			{13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1}, {13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1}}; 
+	
+	private Rank rank;
+	private Suit suit;
+	private int value;
+	
+	
+	public Rank getRank() {
+		return rank;
+	}
+	
+	public void setRank(Rank rank) {
+		this.rank = rank;
+	}
+	
+	
+	
+	public Suit getSuit() {
+		return suit;
+	}
+	
+	public void setSuit(Suit suit) {
+		this.suit = suit;
+	}
+	
+	
+	
+	public int getValue() {
+		return value;
+	}
+	
+	public void setValue(int value) {
+		this.value = value;
+	}
+	
+	
 			
 			
 	
