@@ -6,6 +6,64 @@ public class Card {
 	private Suit suit;
 	private int value;
 	
+	//Card Constructor
+	
+	public Card(Rank rank, Suit suit) {
+		
+		this.suit = suit;
+		this.rank = rank;
+		this.value = valueFromRank(rank);
+		
+	}
+
+	private int valueFromRank(Rank rank) {
+		
+		int cardValue;
+		
+		switch(rank) {
+		case ACE:
+			cardValue = 1;
+			break;
+		case TWO:
+			cardValue = 2;
+			break;
+		case THREE:
+			cardValue = 3;
+			break;
+		case FOUR:
+			cardValue = 4;
+			break;
+		case FIVE:
+			cardValue = 5;
+			break;
+		case SIX:
+			cardValue = 6;
+			break;
+		case SEVEN:
+			cardValue = 7;
+			break;
+		case EIGHT:
+			cardValue = 8;
+			break;
+		case NINE:
+			cardValue = 9;
+			break;
+		case TEN: // these will all spill over to cardValue = 10 bc there is no break.
+		case JACK:
+		case QUEEN:
+		case KING:
+			cardValue = 10;
+			break;
+		default:
+			cardValue = -1;
+			System.out.println("Something went wrong with Card.valueFromRank()");
+		}
+		
+		return cardValue;
+	}
+	
+//------GETTERS AND SETTERS-----------------------------------------------------------
+	
 	// Rank
 	
 	public Rank getRank() {

@@ -74,7 +74,7 @@ public class Main {
 		
 		do {
 			
-	    	userInputString = scnr.nextLine();
+			userInputString = scnr.nextLine();
 			System.out.println();
 			
 			try {
