@@ -2,6 +2,7 @@ package CardGamePackage;
 
 public enum Rank {
 	
+	//ENUM to track ranks
 	ACE,
 	ONE,
 	TWO,
