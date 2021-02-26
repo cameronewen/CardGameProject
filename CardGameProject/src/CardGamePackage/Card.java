@@ -1,10 +1,9 @@
 package CardGamePackage;
 
 public class Card {
-	// TEST
-	// TESTING 123
-	// I'm making another change for a test.
-	// I'm making a second, different change
+	int cardDeck[][] = {{13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1}, {13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1}, 
+			{13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1}, {13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1}}; 
+			
+			
 	
-	// This is a third change
 }
