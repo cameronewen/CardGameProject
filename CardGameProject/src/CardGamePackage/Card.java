@@ -6,6 +6,7 @@ public class Card {
 	private Suit suit;
 	private int value;
 	
+	// Rank
 	
 	public Rank getRank() {
 		return rank;
@@ -15,7 +16,7 @@ public class Card {
 		this.rank = rank;
 	}
 	
-	
+	// Suit
 	
 	public Suit getSuit() {
 		return suit;
@@ -25,7 +26,7 @@ public class Card {
 		this.suit = suit;
 	}
 	
-	
+	// Value
 	
 	public int getValue() {
 		return value;
@@ -34,9 +35,5 @@ public class Card {
 	public void setValue(int value) {
 		this.value = value;
 	}
-	
-	
-			
-			
 	
 }
