@@ -5,7 +5,7 @@ public class Main {
 	
 // FIELDS
 	
-	public static int numOfDecks = 4; // the default number of decks, changable in settings
+	public static int numOfDecks = 4; // the default number of decks, changeable in settings
 	public static int numOfPlayers = 1; // default is 1 on 1 with the dealer, changeable in options
 	public static boolean softSeventeen = false; // changes what the dealer does when they have a 17 w/ an ace and a six
 	
@@ -69,6 +69,8 @@ public class Main {
 	
 	public static void settingsMenu(Scanner scnr) {
 		
+		//TODO add casino default mode / more blackjack variant rules
+		
 		boolean returnToMenu = false;
 		
 		while(!returnToMenu) {
@@ -115,10 +117,10 @@ public class Main {
 	public static void gameRules(Scanner scnr) {
 		System.out.println("gameRules() called");
 		
-		// read gamerules from a .txt using inputstream
+		// TODO MY'KEL: read gamerules from a .txt using inputstream
 		
 		System.out.println("Hit enter to return to menu...");
-		scnr.next();
+		scnr.nextLine();
 		
 		menu(scnr);
 		
@@ -131,6 +133,8 @@ public class Main {
 	public static void playGame(Scanner scnr) {
 		
 		System.out.println("playGame() called\n");
+		
+		//TODO add first deal ? exc
 		
 		System.out.println("Returning to menu\n");
 		menu(scnr);
@@ -154,9 +158,6 @@ public class Main {
 		String userInputString;
 		int userNum = low - 1; // initializes the value to keep the while loop running. 
 		
-		
-		
-		
 		do {
 			
 			System.out.print(">");
@@ -169,6 +170,8 @@ public class Main {
 						
 			} catch (NumberFormatException e) {
 				
+				System.out.println("Fail.");
+				
 			}
 			
 			if(userNum < low || userNum > high) {
@@ -180,7 +183,6 @@ public class Main {
         	return userNum;
         
 	}
-	
 	
 	
 }

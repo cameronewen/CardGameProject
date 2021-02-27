@@ -157,6 +157,20 @@ public class Hand {
 
 	public void setDoubledDown(boolean doubledDown) {
 		this.doubledDown = doubledDown;
+		
+	}
+
+	// check if hand is active
+	public boolean isActive() {
+		
+		return isActive;
+		
+	}
+
+	public void setActive(boolean isActive) {
+		
+		this.isActive = isActive;
+		
 	}
 	
 	

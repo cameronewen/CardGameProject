@@ -40,8 +40,6 @@ public class Deck {
 		
 		cardDeck.clear();
 		
-		int i = 0;
-		
 		for (Suit suit : Suit.values()) { // for loop that iterates through an enum
 			
 		    for (Rank rank : Rank.values()) {
@@ -51,10 +49,6 @@ public class Deck {
 		         
 		    } 
 		    
-		}
-		
-		if(cardDeck.size() > STANDARD_DECK_SIZE) {
-			cardDeck.subList(STANDARD_DECK_SIZE, cardDeck.size()).clear();
 		}
 			
 	}
@@ -83,14 +77,14 @@ public class Deck {
 		Card temp;
 		int randomIndex;
 		
-		Random rng = new Random();
+		Random rng = new Random(); // TODO replace with % mod randomness
 		
 		for(int i = 0; i < cardDeck.size(); i++) {
 			
 			randomIndex = rng.nextInt(cardDeck.size()); // random point is chosen
 			temp = cardDeck.get(randomIndex); // the current index of the random point is saved
 			cardDeck.set(randomIndex, cardDeck.get(i)); // the 
-			cardDeck.set(i, temp); //sets i to the random index we saved earlierS 
+			cardDeck.set(i, temp); //sets i to the random index we saved earlier 
 			
 		}
 		
