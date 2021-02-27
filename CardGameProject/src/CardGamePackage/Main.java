@@ -2,7 +2,16 @@ package CardGamePackage;
 import java.util.Scanner;
 
 public class Main {
+	
+// FIELDS
+	
+	public static int numOfDecks = 4; // the default number of decks, changable in settings
+	public static int numOfPlayers = 1; // default is 1 on 1 with the dealer, changeable in options
+	public static boolean softSeventeen = false; // changes what the dealer does when they have a 17 w/ an ace and a six
+	
 
+// MAIN
+	
 	public static void main(String[] args) {
 	
 		Scanner scnr = new Scanner(System.in);
