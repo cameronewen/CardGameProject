@@ -7,6 +7,7 @@ public class Card {
 	private Rank rank;
 	private Suit suit;
 	private int value;
+	private String name; // just for ease get the suit and rank of a card
 	
 // Card Constructor
 	
@@ -14,6 +15,7 @@ public class Card {
 		
 		this.suit = suit;
 		this.rank = rank;
+		this.name = rank + " OF " + suit;
 		this.value = valueFromRank(rank);
 		
 	}
@@ -96,6 +98,12 @@ public class Card {
 	
 	public void setValue(int value) {
 		this.value = value;
+	}
+	
+	// Name
+	
+	public String getName() {
+		return name;
 	}
 	
 }
