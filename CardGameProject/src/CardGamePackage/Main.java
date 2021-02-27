@@ -6,8 +6,12 @@ public class Main {
 	public static void main(String[] args) {
 	
 		Scanner scnr = new Scanner(System.in);
-		
 
+//		//TEST ZONE START
+//		
+//		
+//		//Test zone end
+		
 		System.out.println("Welcome to BlackJack\n");
         
 		Menu(scnr);
@@ -15,6 +19,7 @@ public class Main {
 		scnr.close();
 		
 	}
+
 	
 	// patch note: adjusted menu to use a method to take input to avoid errors
 	// and changed the if to a switch statement so we can easily add more options.
@@ -68,7 +73,7 @@ public class Main {
 	public static int getIntFromScannerRanged(Scanner scnr, int low, int high) { 
 		
 		String userInputString;
-		int userNum = low - 1; // error indicator.
+		int userNum = low - 1; // initializes the value to keep the while loop running. 
 		
 		
 		System.out.println("Enter an integer between " + low + " and " + high + ".");

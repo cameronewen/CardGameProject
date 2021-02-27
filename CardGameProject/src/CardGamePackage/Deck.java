@@ -8,7 +8,7 @@ public class Deck {
 // FIELDS
 	
 	private final int STANDARD_DECK_SIZE = 52;
-	private ArrayList<Card> cardDeck = new ArrayList<Card>(STANDARD_DECK_SIZE);
+	private ArrayList<Card> cardDeck = new ArrayList<Card>(52); // allocates space for 1 deck arraylist (it will expand on its own if more cards are added)
 
 	
 // CONSTRUCTORS
@@ -97,7 +97,7 @@ public class Deck {
 	}
 	
 	
-	// returns the last card on the deck and removes it from the deck.
+	// returns the last card on the deck and (-->) REMOVES (<--) it from the deck.
 	public Card dealCard() {
 		
 		Card temp = cardDeck.get(0); // pulls bottom card
@@ -117,7 +117,7 @@ public class Deck {
 		
 	}
 	
-	public Card getCardAtIndex(int index) {
+	public Card getCardAtIndex(int index) { // does NOT remove a card from the deck
 		
 		return cardDeck.get(index);
 		

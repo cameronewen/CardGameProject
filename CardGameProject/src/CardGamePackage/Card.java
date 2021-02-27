@@ -28,7 +28,7 @@ public class Card {
 		
 		switch(rank) {
 		case ACE:
-			cardValue = 1;
+			cardValue = 11;
 			break;
 		case TWO:
 			cardValue = 2;
