@@ -3,7 +3,6 @@ package CardGamePackage;
 public enum Rank {
 	
 	ACE,
-	ONE,
 	TWO,
 	THREE,
 	FOUR,
