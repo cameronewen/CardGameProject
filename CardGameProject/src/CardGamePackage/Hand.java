@@ -8,10 +8,13 @@ public class Hand {
 	
 	private ArrayList<Card> hand = new ArrayList<Card>();
 	private int value;						// total value of cards in hand
-	private boolean hasAce = false;			// does the hand have an ace?
+	private int numOfAces = 0;				// how many aces are in the hand
+	private int numOfAcesSetToOne = 0;		// how many of those aces have had their value changed to 1
 	private boolean isBusted = false; 		// hand value goes over 21
 	private boolean doubledDown = false; 	// no more cards can be added to hand
 	private boolean isActive = true; 		// player surrender (diff from bust)
+	private boolean canBeSplit = false;		// checks if the deck can be split
+	private int maxSplits = 2;				// max number of splits, TODO make changeable from settings
 	private int timesSplit = 0; 			// number of times hand has been split
 	private int wager;						// the players wager on this hand
 	
@@ -31,15 +34,35 @@ public class Hand {
 	
 // METHODS
 	
-	public void addCard(Card newCard) {
+	public void addCard(Card newCard) { // TODO (MAYBE) add debug statement for dealer hitting after card value >= 17
 		
-		if(!doubledDown) {
+		if(!doubledDown && isActive && !isBusted) { // checks if hand can get new card (not dd / active / under 21)
 			
-			hand.add(newCard);
+			if(newCard.getRank() == Rank.ACE) { // if the new card is an ace, add an ace to the counter
+				
+				numOfAces++;
+				
+			}
 			
-		} else {
+			hand.add(newCard); // adds card to hand
 			
-			System.out.println("This hand has been doubled down, and no more cards can be added.");
+			checkCanBeSplit();
+			
+		} else { // debug statements, the player shouldn't have the option to hit if any of this is true
+			
+			System.out.println("No more cards can be added to this hand.");
+			
+			if(doubledDown) {
+				System.out.println("DEBUG MESSAGE: Player attempted to add card while doubled down.");
+			}
+			
+			if(isBusted) {
+				System.out.println("DEBUG MESSAGE: Player attempted to add card while busted.");
+			}
+			
+			if(!isActive) {
+				System.out.println("DEBUG MESSAGE: Player attempted to add card to inactive hand.");
+			}
 			
 		}
 		
@@ -55,17 +78,88 @@ public class Hand {
 	
 	public void countValue() {
 		
-		// TODO fill in with value logic wrt aces.
+		value = 0;
+		
+		for(int i = 0; i < hand.size(); i++) {
+			
+			value += hand.get(i).getValue();
+			
+		}
+		
+		if(value > 21) {
+			
+			checkForBust();
+			
+		}
 		
 	}
 	
 	public void doubleDown() {
 		
-		doubledDown = true;
-		wager *= 2;
+		if(!doubledDown) {
+			
+			doubledDown = true;
+			wager *= 2;
+			
+		} else {
+			
+			System.out.println("DEBUG MESSAGE: Hand has already been doubled down");
+			
+		}
 		
 	}
 
+	public void checkForBust() { // checks if card has busted
+		
+		if(value > 21 && numOfAces == numOfAcesSetToOne) { // if there are no more aces to lower value of
+			
+			isActive = false;
+			isBusted = true;
+			
+		} else if(value > 21 && numOfAces > numOfAcesSetToOne) {
+			
+			int index = 0;
+			
+			while( hand.get(index).getValue() != 11 ) {
+				
+				// while the card at index isn't an ace valued at 11
+				
+				index++;
+
+				if(index >= hand.size()) {
+					
+					System.out.println("DEBUG: The error occured at Hand.checkForBust() while searching for an ace not set to 1.");
+				
+				}
+				
+			}
+			
+			hand.get(index).setValue(1);
+			numOfAcesSetToOne++;
+			
+			countValue(); // calls countValue again
+			
+		} else if(value > 21 && numOfAces < numOfAcesSetToOne) {
+			
+			System.out.println("DEBUG MESSAGE: More aces set to 1 than in hand???");
+			
+		} 
+		
+	}
+
+	public void checkCanBeSplit() {
+		
+		if(hand.size() == 2) { // checks if the hand can be split on adding second card
+			
+			if( (hand.get(0).getValue() == hand.get(0).getValue()) && (timesSplit < maxSplits) ) {
+				// if card 1 = card 2 values and the hand has been split less than the max num of splits
+				
+				canBeSplit = true;
+				
+			}
+			
+		}
+	}
 	
 // GETTERS AND SETTERS
 	
@@ -85,15 +179,15 @@ public class Hand {
 	
 	// Does it have an ace?
 	
-	public boolean hasAce() {
+	public int numOfAces() {
 		
-		return hasAce;
+		return numOfAces;
 		
 	}
 	
-	public void setHasAce(boolean hasAce) {
+	public void setNumOfAces(int numOfAces) {
 		
-		this.hasAce = hasAce;
+		this.numOfAces = numOfAces;
 		
 	}
 	
@@ -172,11 +266,18 @@ public class Hand {
 		this.isActive = isActive;
 		
 	}
-	
-	
-	
-	
 
+	public boolean isCanBeSplit() {
+		
+		return canBeSplit;
+		
+	}
+
+	public void setCanBeSplit(boolean canBeSplit) {
+		
+		this.canBeSplit = canBeSplit;
+		
+	}
 	
 	
 }
