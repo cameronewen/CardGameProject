@@ -1,6 +1,6 @@
 package CardGamePackage;
 
-// Hi Dawson
+// Hi Cameron
 
 public class Card { 
 
