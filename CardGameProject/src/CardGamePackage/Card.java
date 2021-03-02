@@ -1,6 +1,8 @@
 package CardGamePackage;
 
-public class Card {
+// Hi Dawson
+
+public class Card { 
 
 // Fields 
 	
