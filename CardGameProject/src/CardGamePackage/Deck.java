@@ -20,7 +20,7 @@ public class Deck {
 		
 	}
 	
-	//adds additional standard decks. (argument of 1 == 1 standard deck)
+	// adds additional standard decks. (argument of 1 == 1 standard deck)
 	public Deck(int numOfDecks) {
 		
 		standardizeDeck();

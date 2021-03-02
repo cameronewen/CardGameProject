@@ -1,7 +1,5 @@
 package CardGamePackage;
 
-// Hi Dawson
-
 public class Card { 
 
 // Fields 
@@ -75,37 +73,51 @@ public class Card {
 	// Rank
 	
 	public Rank getRank() {
+		
 		return rank;
+		
 	}
 	
 	public void setRank(Rank rank) {
+		
 		this.rank = rank;
+		
 	}
 	
 	// Suit
 	
 	public Suit getSuit() {
+		
 		return suit;
+		
 	}
 	
 	public void setSuit(Suit suit) {
+		
 		this.suit = suit;
+		
 	}
 	
 	// Value
 	
 	public int getValue() {
+		
 		return value;
+		
 	}
 	
 	public void setValue(int value) {
+		
 		this.value = value;
+		
 	}
 	
 	// Name
 	
 	public String getName() {
+		
 		return name;
+		
 	}
 	
 }
