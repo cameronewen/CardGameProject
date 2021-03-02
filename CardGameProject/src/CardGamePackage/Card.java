@@ -1,7 +1,5 @@
 package CardGamePackage;
 
-// Hi Cameron
-
 public class Card { 
 
 // Fields 
