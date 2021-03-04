@@ -1,5 +1,7 @@
 package CardGamePackage;
+import java.io.*; 
 import java.util.Scanner;
+
 
 public class Main {
 	
@@ -13,7 +15,7 @@ public class Main {
 	
 // MAIN
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 	
 		Scanner scnr = new Scanner(System.in);
 		
@@ -31,7 +33,7 @@ public class Main {
 	
 // MENUS
 	
-	public static void menu(Scanner scnr) {
+	public static void menu(Scanner scnr) throws IOException {
 		
 		int menuSelection; 
 		
@@ -67,7 +69,7 @@ public class Main {
 		
 	}
 	
-	public static void settingsMenu(Scanner scnr) {
+	public static void settingsMenu(Scanner scnr) throws IOException {
 		
 		//TODO add casino default mode / more blackjack variant rules
 		
@@ -114,10 +116,23 @@ public class Main {
 		
 	}
 		
-	public static void gameRules(Scanner scnr) {
-		System.out.println("gameRules() called");
+	public static void gameRules(Scanner scnr) throws IOException {
 		
-		// TODO MY'KEL: read gamerules from a .txt using inputstream
+		//input by My'kel
+		// TODO update gameplay.txt file to reflect game rules
+	
+		FileInputStream fileInputStream = new FileInputStream("gameplay.txt");
+		Scanner fileInput = new Scanner(fileInputStream);
+		
+		while(fileInput.hasNextLine()) {
+			System.out.println(fileInput.nextLine());
+		}
+		
+		
+		System.out.println();
+		
+		fileInputStream.close();
+		fileInput.close();
 		
 		System.out.println("Hit enter to return to menu...");
 		scnr.nextLine();
@@ -130,7 +145,7 @@ public class Main {
 	
 // GAME
 	
-	public static void playGame(Scanner scnr) {
+	public static void playGame(Scanner scnr) throws IOException {
 		
 		System.out.println("playGame() called\n");
 		
