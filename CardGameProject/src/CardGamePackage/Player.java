@@ -6,8 +6,8 @@ public class Player { // this is not the user, this class includes npcs
 
 // FIELDS
 	
-	private ArrayList<Hand> playerHands = new ArrayList<Hand>(); // players can have multiple hands thanks to splitting
-	private String name;
+	protected ArrayList<Hand> playerHands = new ArrayList<Hand>(); // players can have multiple hands thanks to splitting
+	protected String name;
 
 	
 // CONSTRUCTOR
@@ -44,7 +44,9 @@ public class Player { // this is not the user, this class includes npcs
 		}
 	}
 
-	
+	public void Stand(Hand handToStand) {
+		handToStand.setHasBeenStoodOn(true);
+	}
 	
 // GETTERS AND SETTERS
 	

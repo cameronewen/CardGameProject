@@ -14,7 +14,7 @@ public class Hand {
 	private boolean doubledDown = false; 	// no more cards can be added to hand
 	private boolean isActive = true; 		// player surrender (diff from bust)
 	private boolean canBeSplit = false;		// checks if the deck can be split
-	private boolean stand = false;			// player stood on hand or not
+	private boolean hasBeenStoodOn = false;			// player stood on hand or not
 	private int maxSplits = 2;				// max number of splits, TODO make changeable from settings
 	private int timesSplit = 0; 			// number of times hand has been split
 	private int wager;						// the players wager on this hand
@@ -282,12 +282,12 @@ public class Hand {
 
 	// stand
 	
-	public boolean getStand() {
-		return stand;
+	public boolean hasBeenStoodOn() {
+		return hasBeenStoodOn;
 	}
 
-	public void setStand(boolean stand) {
-		this.stand = stand;
+	public void setHasBeenStoodOn(boolean hasBeenStoodOn) {
+		this.hasBeenStoodOn = hasBeenStoodOn;
 	}
 	
 	
