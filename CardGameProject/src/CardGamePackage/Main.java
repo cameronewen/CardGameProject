@@ -149,7 +149,16 @@ public class Main {
 		
 		System.out.println("playGame() called\n");
 		
-		//TODO add first deal ? exc
+		//TODO deal cards to all players ( have an arraylist of players thats cycled through?) (User -> Any CPUs -> Dealer)
+				// Required for this: dealer card behavior (one up, one down)
+		
+		//TODO users turn (dynamic hit, stand, split, double down, surrender)
+		
+		//TODO CPUs turns
+		
+		//TODO dealer turns
+		
+		//TODO payouts
 		
 		System.out.println("Returning to menu\n");
 		menu(scnr);
