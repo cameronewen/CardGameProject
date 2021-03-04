@@ -121,7 +121,7 @@ public class Main {
 		//input by My'kel
 		// TODO update gameplay.txt file to reflect game rules
 	
-		FileInputStream fileInputStream = new FileInputStream("gameplay.txt");
+		FileInputStream fileInputStream = new FileInputStream("CardGameProject/src/gameplay.txt");
 		Scanner fileInput = new Scanner(fileInputStream);
 		
 		while(fileInput.hasNextLine()) {
