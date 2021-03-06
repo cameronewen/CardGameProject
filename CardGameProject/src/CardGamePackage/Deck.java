@@ -73,18 +73,19 @@ public class Deck {
 	
 	//shuffles the deck randomly. currently uses java.util.random but if we want to use mod we can change it
 	public void shuffleDeck() {
-		
+		long y = System.currentTimeMillis();
+		int i = (int) y;
 		Card temp;
 		int randomIndex;
 		
-		Random rng = new Random(); // TODO replace with % mod randomness
+		//Random rng = new Random(); // TODO replace with % mod randomness
 		
-		for(int i = 0; i < cardDeck.size(); i++) {
-			
-			randomIndex = rng.nextInt(cardDeck.size()); // random point is chosen
+		for(int r = 0; r < cardDeck.size(); r++) {
+			randomIndex = RNG.RandomNumberGenerator(i);
+			//randomIndex = rng.nextInt(cardDeck.size()); // random point is chosen
 			temp = cardDeck.get(randomIndex); // the current index of the random point is saved
-			cardDeck.set(randomIndex, cardDeck.get(i)); // the 
-			cardDeck.set(i, temp); //sets i to the random index we saved earlier 
+			cardDeck.set(randomIndex, cardDeck.get(r)); // the 
+			cardDeck.set(r, temp); //sets i to the random index we saved earlier 
 			
 		}
 		
