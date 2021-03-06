@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class Main {
 	
+	//Testing gitHub to eclipse connection 1:35 pst 3/6/2021
+	
 // FIELDS
 	
 	public static int numOfDecks = 4; // the default number of decks, changeable in settings
