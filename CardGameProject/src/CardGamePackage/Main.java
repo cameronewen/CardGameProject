@@ -6,8 +6,7 @@ import java.util.Scanner;
 
 public class Main {
 	
-	//Testing gitHub to eclipse connection 1:39 pst 3/6/2021
-	
+
 // FIELDS
 	
 	public static int numOfDecks = 4; // the default number of decks, changeable in settings
@@ -26,6 +25,7 @@ public class Main {
 		
 		//Test zone
 		
+		//How do we use an object from a non static method under another class? 
         
 		menu(scnr);
 		
@@ -154,6 +154,8 @@ public class Main {
 	public static void playGame(Scanner scnr) throws IOException {
 		
 		System.out.println("playGame() called\n");
+		
+        
 		
 		//TODO deal cards to all players ( have an arraylist of players thats cycled through?) (User -> Any CPUs -> Dealer)
 				// Required for this: dealer card behavior (one up, one down)
