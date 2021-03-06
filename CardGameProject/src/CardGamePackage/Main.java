@@ -24,7 +24,8 @@ public class Main {
 		System.out.println("Welcome to BlackJack\n");
 		
 		//Test zone
-		
+		Deck shuffledDeck = new Deck();
+		shuffledDeck.shuffleDeck();
 		//How do we use an object from a non static method under another class? 
         
 		menu(scnr);
