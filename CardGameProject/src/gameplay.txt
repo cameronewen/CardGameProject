@@ -1,3 +1,9 @@
 
 
-        This is a test. 
+           Rules of BlackJack a.k.a. Vingt-et-un
+       
+       
+       Dealer deals two cards to each player. 
+       
+       
+       

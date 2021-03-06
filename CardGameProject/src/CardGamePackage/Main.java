@@ -23,6 +23,9 @@ public class Main {
 		Scanner scnr = new Scanner(System.in);
 		
 		System.out.println("Welcome to BlackJack\n");
+		
+		//Test zone
+		
         
 		menu(scnr);
 		

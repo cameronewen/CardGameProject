@@ -88,7 +88,9 @@ public class Deck {
 			cardDeck.set(r, temp); //sets i to the random index we saved earlier 
 			
 		}
-		
+		for(int r = 0; r < cardDeck.size(); r++) {
+			System.out.println(cardDeck);
+		}
 	}
 	
 	
