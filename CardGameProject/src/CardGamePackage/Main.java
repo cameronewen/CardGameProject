@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Main {
 	
-	//Testing gitHub to eclipse connection 1:35 pst 3/6/2021
+	//Testing gitHub to eclipse connection 1:36 pst 3/6/2021
 	
 // FIELDS
 	
