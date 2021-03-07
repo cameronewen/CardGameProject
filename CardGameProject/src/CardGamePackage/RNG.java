@@ -25,5 +25,15 @@ public class RNG {
 		
 		
 	}
-	
+
+	public static boolean randomBoolean(int i) {
+		
+		boolean randBoolean = false;
+		
+		// TODO My'kel could you make a method that returns a random boolean?
+		// possibly just ask your current random number generator to get a num between 0-1?
+		
+		return randBoolean;
 	}
+	
+}
