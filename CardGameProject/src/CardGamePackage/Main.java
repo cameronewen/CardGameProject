@@ -13,7 +13,7 @@ public class Main {
 	public static int numOfPlayers = 1; // default is 1 on 1 with the dealer, changeable in options
 	public static boolean softSeventeen = false; // changes what the dealer does when they have a 17 w/ an ace and a six
 	public static Dealer dealer; // Temp variable to identify dealer FIXME If relocated or changed, change CPU logic to match
-
+	public static Deck deck; // Temp variable to identify a deck FIXME when given a permanent location, change references in Player class
 	
 // MAIN
 	
@@ -23,10 +23,15 @@ public class Main {
 		
 		System.out.println("Welcome to BlackJack\n");
 		
+		
+		
 		//Test zone
-		Deck shuffledDeck = new Deck();
-		shuffledDeck.shuffleDeck();
+		
+		deck = new Deck();
+		deck.shuffleDeck();
 		//How do we use an object from a non static method under another class? 
+		
+		// Test End
         
 		menu(scnr);
 		
