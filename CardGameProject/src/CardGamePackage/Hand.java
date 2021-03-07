@@ -271,7 +271,7 @@ public class Hand {
 		
 	}
 
-	public boolean isCanBeSplit() {
+	public boolean canBeSplit() {
 		
 		return canBeSplit;
 		
