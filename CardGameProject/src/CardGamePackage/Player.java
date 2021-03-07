@@ -35,6 +35,9 @@ public class Player { // this is not the user, this class includes npcs
 			handToSplit.setTimesSplit(handToSplit.getTimesSplit() + 1); // incrementing the times a hand has been split
 			newHand.setTimesSplit(newHand.getTimesSplit() + 1);
 			
+			handToSplit.addCard(Main.deck.dealCard()); // adds a new card to each hand from the deck
+			newHand.addCard(Main.deck.dealCard()); // FIXME if/when the deck is moved to a permanent spot, change this
+			
 			playerHands.add(newHand); // add the new hand to the players hands
 			
 		} else {
@@ -42,6 +45,7 @@ public class Player { // this is not the user, this class includes npcs
 			System.out.println("You can't split this hand!"); // this shouldn't happen in game, option shouldn't be offered if they can't split
 			
 		}
+		
 	}
 
 	public void Stand(Hand handToStand) {
