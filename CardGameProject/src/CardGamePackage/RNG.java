@@ -26,7 +26,7 @@ public class RNG {
 		
 	}
 
-	public static boolean randomBoolean(int i) {
+	public static boolean randomBoolean() {
 		
 		boolean randBoolean = false;
 		
@@ -34,6 +34,7 @@ public class RNG {
 		// possibly just ask your current random number generator to get a num between 0-1?
 		
 		return randBoolean;
+		
 	}
 	
 }
