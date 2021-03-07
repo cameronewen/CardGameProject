@@ -148,19 +148,22 @@ public class Hand {
 		
 	}
 
-	public void checkCanBeSplit() {
-		
-		if(hand.size() == 2) { // checks if the hand can be split on adding second card
+	public void checkCanBeSplit() {	// checks if deck is able to be split
 			
-			if( (hand.get(0).getValue() == hand.get(0).getValue()) && (timesSplit < maxSplits) ) {
-				// if card 1 = card 2 values and the hand has been split less than the max num of splits
+			if( (hand.size() == 2) && // hand has two cards
+				(hand.get(0).getValue() == hand.get(0).getValue()) && // cards are of same value
+				(timesSplit < maxSplits) ) { // cards have been split less than the maximum number of times
 				
 				canBeSplit = true;
 				
+			} else {
+				
+				canBeSplit = false;
+				
 			}
-			
-		}
+		
 	}
+
 	
 // GETTERS AND SETTERS
 	
