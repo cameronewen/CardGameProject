@@ -37,7 +37,7 @@ public class Dealer { // the "dealer" might not need to do much at all besides h
 		this.name = name;
 	}
 
-	public Card getUpcard(String name) { // gets dealers upcard (second card in hand)
+	public Card getUpcard() { // gets dealers upcard (second card in hand)
 		
 		return dealerHand.getCard(1); 
 		
