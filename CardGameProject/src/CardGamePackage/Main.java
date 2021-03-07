@@ -12,7 +12,7 @@ public class Main {
 	public static int numOfDecks = 4; // the default number of decks, changeable in settings
 	public static int numOfPlayers = 1; // default is 1 on 1 with the dealer, changeable in options
 	public static boolean softSeventeen = false; // changes what the dealer does when they have a 17 w/ an ace and a six
-	
+	public static Dealer dealer; // Temp variable to identify dealer FIXME If relocated or changed, change CPU logic to match
 
 	
 // MAIN
