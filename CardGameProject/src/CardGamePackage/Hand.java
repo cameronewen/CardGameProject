@@ -29,7 +29,7 @@ public class Hand {
 	
 	public Hand(Card card1) {
 		
-		hand.add(card1);
+		addCard(card1);
 		
 	}
 	
@@ -274,12 +274,6 @@ public class Hand {
 	public boolean isCanBeSplit() {
 		
 		return canBeSplit;
-		
-	}
-
-	public void setCanBeSplit(boolean canBeSplit) {
-		
-		this.canBeSplit = canBeSplit;
 		
 	}
 
