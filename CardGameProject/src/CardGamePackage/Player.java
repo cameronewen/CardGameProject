@@ -35,8 +35,8 @@ public class Player { // this is not the user, this class includes npcs
 			handToSplit.setTimesSplit(handToSplit.getTimesSplit() + 1); // incrementing the times a hand has been split
 			newHand.setTimesSplit(newHand.getTimesSplit() + 1);
 			
-			handToSplit.addCard(Main.deck.dealCard()); // adds a new card to each hand from the deck
-			newHand.addCard(Main.deck.dealCard()); // FIXME if/when the deck is moved to a permanent spot, change this
+			handToSplit.addCard(Main.currentGame.getDeck().dealCard()); // adds a new card to each hand from the deck
+			newHand.addCard(Main.currentGame.getDeck().dealCard()); // FIXME if/when the deck is moved to a permanent spot, change this
 			
 			playerHands.add(newHand); // add the new hand to the players hands
 			

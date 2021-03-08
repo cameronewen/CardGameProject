@@ -2,9 +2,9 @@ package CardGamePackage;
 
 public class CpuPlayer extends Player{
 
-	public CpuPlayer(String name) {
+	public CpuPlayer() {
 		
-		super(name);
+		super(RNG.randomName());
 		
 	}
 
@@ -56,7 +56,7 @@ public class CpuPlayer extends Player{
 	public boolean checkIfWillSplit(Hand cpuHand) {
 		
 		boolean shouldSplit;
-		int upcardVal = Main.dealer.getUpcard().getValue();
+		int upcardVal = Main.currentGame.getDealer().getUpcard().getValue();
 		
 		if(!cpuHand.canBeSplit()) { // if the hand can't be split, return false
 			
