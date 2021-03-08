@@ -74,17 +74,21 @@ public class Deck {
 	
 	
 	public void shuffleDeck() {
-		//move this to method timeKey()
-		long y = System.currentTimeMillis();
-		int x = (int) y;
-		//
+	
 		
 		Card temp;
 		int randomIndex;
 		
 		
 		for(int i = 0; i < cardDeck.size(); i++) {
-			randomIndex = RNG.RandomNumberGenerator(x);
+			
+			//move this to method timeKey()
+			long y = System.currentTimeMillis();
+			/*int x = (int) y;
+			//*/
+			randomIndex = RNG.RandomNumberGenerator(y);
+			System.out.println("index #" + i);
+			System.out.println("TimeMillis % mod" + randomIndex);
 			//randomIndex = RNG.nextInt(cardDeck.size()); // random point is chosen
 			temp = cardDeck.get(randomIndex); // the current index of the random point is saved
 			cardDeck.set(randomIndex, cardDeck.get(i)); // the 
@@ -120,8 +124,5 @@ public class Deck {
 		return cardDeck.get(index);
 		
 	}
-	
-	
-	
 	
 }

@@ -13,10 +13,15 @@ public class RNG {
 	// Xsubn-1 = (aXsubn + b) mod m
 	}
 	
-	public static int RandomNumberGenerator(int Timekey) {
+	public static int RandomNumberGenerator(long Timekey) {
 	
+	    System.out.println("Timekey = " + Timekey);
+		int x = (int) Timekey;
 		
-		int x = Timekey%51;
+		
+		x = x%51;
+		
+		System.out.println("RNG TM mod 51 = " + x);
 		
 		
 		return x;
