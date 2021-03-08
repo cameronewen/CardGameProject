@@ -6,22 +6,21 @@ public class RNG {
 	public RNG() {
 	
 	//This is a Random Number Generator used to shuffle the cards in the deck
+		//I'm considering adding a method "Timekey() that changes the long from timeMillis into an int and
+		//then the timeMillis can be used as key for any randomNumberGenerator, including the boolean 
+		//for CPUplayers
+		
 	// Xsubn-1 = (aXsubn + b) mod m
 	}
 	
-	public static int RandomNumberGenerator(int i) {
-		//Test zone open
+	public static int RandomNumberGenerator(int Timekey) {
+	
 		
-		int x = i%51;
+		int x = Timekey%51;
 		
 		
 		return x;
 		
-		
-		
-		
-		
-		//Test zone closed
 		
 		
 	}
@@ -38,7 +37,7 @@ public class RNG {
 	}
 	
 	public static String randomName() {
-		
+		//What's this for? [*my'k comment]
 		return "John Smith";
 		
 	}

@@ -33,6 +33,7 @@ public class Deck {
 		
 	}
 
+	
 // DECK METHODS
 	
 	//resets / sets deck to a standard size and order
@@ -73,10 +74,13 @@ public class Deck {
 	
 	//shuffles the deck randomly. currently uses java.util.random but if we want to use mod we can change it
 	public void shuffleDeck() {
+		//move this to method timeKey()
 		long y = System.currentTimeMillis();
 		int x = (int) y;
 		Card temp;
 		int randomIndex;
+		
+		Deck dealersDeck = new Deck(); 
 		
 		//Random rng = new Random(); // TODO replace with % mod randomness
 		
@@ -88,9 +92,7 @@ public class Deck {
 			cardDeck.set(i, temp); //sets i to the random index we saved earlier 
 			
 		}
-		for(int i = 0; i < cardDeck.size(); i++) {
-			System.out.println("Print Cards here for testing");
-		}
+		
 	}
 	
 	

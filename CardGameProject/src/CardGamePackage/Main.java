@@ -22,14 +22,6 @@ public class Main {
 		
 		System.out.println("Welcome to BlackJack\n");
 		
-		
-		
-		//Test zone
-		
-
-		
-		// Test End
-        
 		menu(scnr);
 		
 		System.out.println("\nGame Closing");
@@ -143,6 +135,7 @@ public class Main {
 		fileInputStream.close();
 		fileInput.close();
 		
+		System.out.println();
 		System.out.println("Hit enter to return to menu...");
 		scnr.nextLine();
 		
@@ -158,6 +151,16 @@ public class Main {
 		
 		System.out.println("playGame() called\n");
 		
+
+		//Test zone
+		Deck testDeck = new Deck();
+	
+		for(int i = 0; i < testDeck.getDeckSize(); i++) {
+			System.out.println(testDeck.getCardAtIndex(i).getName());
+		}
+		
+		
+		// Test End
         
 		
 		//TODO deal cards to all players ( have an arraylist of players thats cycled through?) (User -> Any CPUs -> Dealer)
