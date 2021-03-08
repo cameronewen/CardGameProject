@@ -37,4 +37,9 @@ public class RNG {
 		
 	}
 	
+	public static String randomName() {
+		
+		return "John Smith";
+		
+	}
 }
