@@ -154,6 +154,7 @@ public class Main {
 
 		//Test zone
 		Deck testDeck = new Deck();
+		testDeck.shuffleDeck();
 	
 		for(int i = 0; i < testDeck.getDeckSize(); i++) {
 			System.out.println(testDeck.getCardAtIndex(i).getName());
