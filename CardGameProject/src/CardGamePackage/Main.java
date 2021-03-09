@@ -150,19 +150,8 @@ public class Main {
 	public static void playGame(Scanner scnr) throws IOException {
 		
 		System.out.println("playGame() called\n");
-		
-
-		//Test zone
-		Deck testDeck = new Deck();
-		testDeck.shuffleDeck();
-	
-		for(int i = 0; i < testDeck.getDeckSize(); i++) {
-			System.out.println(testDeck.getCardAtIndex(i).getName());
-		}
-		
-		
-		// Test End
         
+		//mykelTest();
 		
 		//TODO deal cards to all players ( have an arraylist of players thats cycled through?) (User -> Any CPUs -> Dealer)
 				// Required for this: dealer card behavior (one up, one down)
@@ -221,6 +210,34 @@ public class Main {
         
         	return userNum;
         
+	}
+	
+// DEBUG METHODS
+	
+	public static void mykelTest() {
+		
+		Deck testDeck = new Deck();
+		testDeck.shuffleDeck();
+	
+		for(int i = 0; i < testDeck.getDeckSize(); i++) {
+			
+			System.out.println(testDeck.getCardAtIndex(i).getName());
+		
+		}
+
+		
+	}
+	
+	public static void camTest() {
+		
+		
+		
+	}
+	
+	public static void dawsonTest() {
+		
+		
+		
 	}
 	
 	
