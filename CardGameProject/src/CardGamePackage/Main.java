@@ -23,6 +23,7 @@ public class Main {
 		System.out.println("Welcome to BlackJack\n");
 		
 		menu(scnr);
+		//camTest();
 		
 		System.out.println("\nGame Closing");
 		
@@ -230,6 +231,23 @@ public class Main {
 	
 	public static void camTest() {
 		
+		
+		currentGame = new Game(); // add new game
+		currentGame.setDeck(new Deck()); // add deck to draw from
+		currentGame.clearCpuList(); // clear cpus
+		currentGame.addCpu(new CpuPlayer()); // add new plain cpu
+		
+		Hand cpuHand = currentGame.getCpu(0).getHand(0);
+		Hand dealerHand = currentGame.getDealer().getHand();
+		CpuPlayer cpu = currentGame.getCpu(0);
+		
+		dealerHand.addCard(new Card(Rank.TWO, Suit.HEARTS));
+		dealerHand.addCard(new Card(Rank.TEN, Suit.CLUBS));
+		
+		cpuHand.addCard(new Card(Rank.EIGHT, Suit.HEARTS));
+		cpuHand.addCard(new Card(Rank.EIGHT, Suit.HEARTS));
+		
+		cpu.playHandCPU();
 		
 		
 	}
