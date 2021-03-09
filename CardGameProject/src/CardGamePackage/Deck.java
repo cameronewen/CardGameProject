@@ -82,15 +82,13 @@ public class Deck {
 		
 		for(int i = 0; i < cardDeck.size(); i++) {
 			
-		
-			randomIndex = RNG.RandomNumberGenerator(cardDeck.size());
-			System.out.print(i + ": ");
-			System.out.println(randomIndex);
-			//randomIndex = RNG.nextInt(cardDeck.size()); // random point is chosen
-			temp = cardDeck.get(randomIndex); // the current index of the random point is saved
+			randomIndex = RNG.RandomNumberGenerator(cardDeck.size()); // rand index is chosen
+			System.out.print(i + ": "); // debug
+			System.out.println(randomIndex); // debug 
+			temp = cardDeck.get(randomIndex); // the card at random point is saved to temp
 			
-			cardDeck.set(randomIndex, cardDeck.get(i)); // the 
-			cardDeck.set(i, temp); //sets i to the random index we saved earlier 
+			cardDeck.set(randomIndex, cardDeck.get(i)); // the card at i is moved to random index
+			cardDeck.set(i, temp); // the card previously in randomindex is moved to i
 			
 		}
 		
