@@ -83,9 +83,9 @@ public class Deck {
 		for(int i = 0; i < cardDeck.size(); i++) {
 			
 		
-			randomIndex = RNG.RandomNumberGenerator(51);
-			System.out.println("index #" + i);
-			System.out.println("TimeMillis % mod" + randomIndex);
+			randomIndex = RNG.RandomNumberGenerator(cardDeck.size());
+			System.out.print(i + ": ");
+			System.out.println(randomIndex);
 			//randomIndex = RNG.nextInt(cardDeck.size()); // random point is chosen
 			temp = cardDeck.get(randomIndex); // the current index of the random point is saved
 			
