@@ -21,7 +21,7 @@ public class Dealer { // the "dealer" might not need to do much at all besides h
 
 // GETTERS AND SETTERS
 	
-	public Hand getDealerHand() {
+	public Hand getHand() {
 		return dealerHand;
 	}
 
