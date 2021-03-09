@@ -15,9 +15,10 @@ public class Hand {
 	private boolean isActive = true; 		// player surrender (diff from bust)
 	private boolean canBeSplit = false;		// checks if the deck can be split
 	private boolean hasBeenStoodOn = false;			// player stood on hand or not
-	private int maxSplits = 2;				// max number of splits, TODO make changeable from settings
 	private int timesSplit = 0; 			// number of times hand has been split
 	private int wager;						// the players wager on this hand
+	
+	public static int maxSplits = 2;				// max number of splits, TODO make changeable from settings
 	
 // CONSTRUCTOR
 	
@@ -151,7 +152,7 @@ public class Hand {
 	public void checkCanBeSplit() {	// checks if deck is able to be split
 			
 			if( (hand.size() == 2) && // hand has two cards
-				(hand.get(0).getValue() == hand.get(1).getValue()) && // cards are of same value
+				( (hand.get(0).getValue() == hand.get(1).getValue()) || (hand.get(0).getRank() == hand.get(1).getRank()) ) && // cards are of same value or rank
 				(timesSplit < maxSplits) ) { // cards have been split less than the maximum number of times
 				
 				canBeSplit = true;
@@ -161,7 +162,7 @@ public class Hand {
 				canBeSplit = false;
 				
 			}
-		
+			
 	}
 
 	
