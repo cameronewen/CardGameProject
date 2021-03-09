@@ -151,7 +151,7 @@ public class Hand {
 	public void checkCanBeSplit() {	// checks if deck is able to be split
 			
 			if( (hand.size() == 2) && // hand has two cards
-				(hand.get(0).getValue() == hand.get(0).getValue()) && // cards are of same value
+				(hand.get(0).getValue() == hand.get(1).getValue()) && // cards are of same value
 				(timesSplit < maxSplits) ) { // cards have been split less than the maximum number of times
 				
 				canBeSplit = true;
