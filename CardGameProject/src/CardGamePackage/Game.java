@@ -66,4 +66,8 @@ public class Game {
 		return cpuList.get(index);
 	}
 	
+	public void clearCpuList() {
+		cpuList.clear();
+	}
+	
 }
