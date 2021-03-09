@@ -16,6 +16,12 @@ public class CpuPlayer extends Player{
 			Hand currHand = playerHands.get(i);
 			boolean noSplit = false;
 			
+//			System.out.println("Playing hand: " + i); // DEBUG FIXME
+//			
+			for(int x = 0; x < currHand.getSize(); x++) { // DEBUG PRINTOUT FIXME
+				System.out.println("Card " + x + ": " + currHand.getCard(x).getName());
+			}
+			
 			if((currHand.getValue() != 21) && (currHand.isActive()) && !currHand.isBusted()) {
 			
 				do {
@@ -26,26 +32,37 @@ public class CpuPlayer extends Player{
 							
 							splitHand(currHand);
 							
-							System.out.println("Test Statement: CPU decided to split this hand.");
+							for(int x = 0; x < currHand.getSize(); x++) { // DEBUG PRINTOUT FIXME
+								System.out.println("Card " + x + ": " + currHand.getCard(x).getName());
+							}
+							
+							System.out.println("DEBUG: CPU decided to split this hand.");
 	
 							
 						} else {
 							
 							noSplit = true;
 							
-							System.out.println("Test Statement: CPU decided not to split this hand.");
+							System.out.println("DEBUG: CPU decided not to split this hand.");
 							
 						}
 					
 					}
 						
+				
 					
-				// check if they should stand
-				// check if they should double down
-				// check if they should surrender
+				if(checkIfWillSurrender(currHand)) { //FIXME add surrender on/off in settings
+					
+					surrender(currHand);
+					System.out.println("DEBUG: CPU decided to surrender");
+					
+				}
+				
+				// double down
 				// check if they should hit
+				// check if they should stand
 					
-				} while (!currHand.hasBeenStoodOn()); // while player hasn't stood on hand
+				} while (!currHand.hasBeenStoodOn() || !currHand.isActive()); // while player hasn't stood on hand
 			
 			}
 		
@@ -60,13 +77,14 @@ public class CpuPlayer extends Player{
 		
 		if(!cpuHand.canBeSplit()) { // if the hand can't be split, return false
 			
+			System.out.println("CpuPlayer.checkIfWillSplit(): hand can't be split");
 			return false;
 			
 		}
 		
 		switch(cpuHand.getCard(0).getRank()) {
 		
-			case ACE: // always split aces and 8s
+			case ACE:// always split aces and 8s
 			case EIGHT:
 				
 				shouldSplit = true;
@@ -173,4 +191,28 @@ public class CpuPlayer extends Player{
 		
 	}
 
+	public boolean checkIfWillSurrender(Hand cpuHand) {
+		
+		int upcardVal = Main.currentGame.getDealer().getUpcard().getValue();
+		int handVal = cpuHand.getValue();
+		boolean result;
+		
+		if( ((upcardVal == 9 || upcardVal == 10 || upcardVal == 11) && handVal == 16) ||
+			((upcardVal == 10) && (handVal == 15))) {
+			
+			result = true;
+			
+		} else if (Main.softSeventeen && ((upcardVal == 11 || upcardVal == 1) && (handVal == 15 || handVal == 17))) {
+			
+			result = true;
+			
+		} else {
+			
+			result = false;
+			
+		}
+		
+		return result;
+		
+	}
 }
