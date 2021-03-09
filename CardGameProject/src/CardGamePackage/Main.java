@@ -2,7 +2,6 @@ package CardGamePackage;
 import java.io.*; 
 import java.util.Scanner;
 
-// THIS IS A TEST
 
 public class Main {
 	
@@ -21,6 +20,7 @@ public class Main {
 		Scanner scnr = new Scanner(System.in);
 		
 		System.out.println("Welcome to BlackJack\n");
+		mykelTest();
 		
 		menu(scnr);
 		//camTest();
