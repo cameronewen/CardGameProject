@@ -13,9 +13,26 @@ public class RNG {
 	public static boolean randomBoolean() {
 		
 		boolean randBoolean = false;
+		Random random = new Random();
+		int randomIndex = random.nextInt(2);
 		
-		// TODO My'kel could you make a method that returns a random boolean?
-		// possibly just ask your current random number generator to get a num between 0-1?
+		
+		
+		switch(randomIndex) {
+
+		case 1:
+			randBoolean = false;
+			break;
+
+		case 2:
+			randBoolean = true;
+			break;
+			
+		default:
+			System.out.println("Something went wrong with the randBoolean generator.");
+
+	}
+		
 		
 		return randBoolean;
 		
@@ -23,9 +40,7 @@ public class RNG {
 	
 	public static String randomName() {
 		
-		// What's this for? [*my'k comment]
-		
-		// CAM - It's for naming CPUs and the dealer eventually, the John Smith thing is filler
+		// this is for naming CPUs and the dealer eventually, the John Smith thing is filler
 		// so it works in the meantime
 		
 		return "John Smith";
