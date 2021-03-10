@@ -39,7 +39,45 @@ public class Main {
 		
 	}
 
+// SAVE / LOAD
 	
+	public static void gameRules(Scanner scnr) throws IOException {
+		
+		//input by My'kel
+		// TODO update gameplay.txt file to reflect game rules
+	
+		FileInputStream fileInputStream = new FileInputStream("src/gameplay.txt");
+		Scanner fileInput = new Scanner(fileInputStream);
+		
+		while(fileInput.hasNextLine()) {
+			System.out.println(fileInput.nextLine());
+		}
+		
+		
+		System.out.println();
+		
+		fileInputStream.close();
+		fileInput.close();
+		
+		System.out.println();
+		System.out.println("Hit enter to return to menu...");
+		scnr.nextLine();
+		
+		menu(scnr);
+		
+	}
+	
+	public static void saveSettings() {
+		
+		
+		
+	}
+	
+	public static void loadSettings() {
+		
+		
+		
+	}
 	
 // MENUS
 	
@@ -109,10 +147,10 @@ public class Main {
 					break;
 					
 				case 2:
-					System.out.println("Current number of CPU players: " + (numOfCpuPlayers)); // minus the player
+					System.out.println("Current number of CPU players: " + (numOfCpuPlayers));
 					System.out.println("Enter desired number of CPU players (Max 6): ");
 					
-					numOfCpuPlayers = getIntFromScannerRanged(scnr, 0, 6); // the +1 is for the user player
+					numOfCpuPlayers = getIntFromScannerRanged(scnr, 0, 6);
 					break;
 					
 				case 3: 
@@ -131,33 +169,8 @@ public class Main {
 		
 	}
 		
-	public static void gameRules(Scanner scnr) throws IOException {
-		
-		//input by My'kel
-		// TODO update gameplay.txt file to reflect game rules
-	
-		FileInputStream fileInputStream = new FileInputStream("src/gameplay.txt");
-		Scanner fileInput = new Scanner(fileInputStream);
-		
-		while(fileInput.hasNextLine()) {
-			System.out.println(fileInput.nextLine());
-		}
-		
-		
-		System.out.println();
-		
-		fileInputStream.close();
-		fileInput.close();
-		
-		System.out.println();
-		System.out.println("Hit enter to return to menu...");
-		scnr.nextLine();
-		
-		menu(scnr);
-		
-	}
 
-	
+
 	
 // GAME
 	
