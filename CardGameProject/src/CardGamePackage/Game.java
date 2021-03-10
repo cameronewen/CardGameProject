@@ -16,7 +16,7 @@ public class Game {
 	public Game() { 
 		dealer = new Dealer();  
 		deck = new Deck(Main.numOfDecks);
-		user = new User("You");
+		user = new User("You", Main.playerMoney);
 		
 		for(int i = 0; i < Main.numOfPlayers; i++) {
 			

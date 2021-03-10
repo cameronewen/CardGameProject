@@ -18,6 +18,18 @@ public class Dealer { // the "dealer" might not need to do much at all besides h
 	
 //METHODS
 	
+	public void playHand() {
+		
+		// reveal holecard
+		
+		// if >= 17, they stand (if soft 17 is on, and theres an ace, they convert it to 1)
+		
+		// if <= 16, they hit
+		
+		// they cannot double, split, or surrender. no strats
+		
+	}
+	
 
 // GETTERS AND SETTERS
 	

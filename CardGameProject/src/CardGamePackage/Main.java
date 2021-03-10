@@ -13,6 +13,7 @@ public class Main {
 	public static int numOfPlayers = 1; // default is 1 on 1 with the dealer, changeable in options
 	public static boolean softSeventeen = false; // changes what the dealer does when they have a 17 w/ an ace and a six
 	public static Game currentGame;
+	public static int playerMoney = 1000;
 	
 // MAIN
 	
@@ -152,11 +153,15 @@ public class Main {
 	public static void playGame(Scanner scnr) throws IOException {
 		
 		System.out.println("playGame() called\n");
-        
-		//mykelTest();
 		
-		//TODO deal cards to all players ( have an arraylist of players thats cycled through?) (User -> Any CPUs -> Dealer)
-				// Required for this: dealer card behavior (one up, one down)
+		// load current money from file?
+		
+		currentGame = new Game();
+		
+		// player places wager on hand, then cpus (TODO add max wager setting)
+		
+		//TODO deal cards to all players ( have an arraylist of cpuplayers thats cycled through?) (User -> Any CPUs -> Dealer)
+				// print cards of players as they're dealed, except for dealer, whose upcard is printed
 		
 		//TODO users turn (dynamic hit, stand, split, double down, surrender)
 		
@@ -164,7 +169,7 @@ public class Main {
 		
 		//TODO dealer turns
 		
-		//TODO payouts
+		//TODO payouts / save new total to file
 		
 		System.out.println("Returning to menu\n");
 		menu(scnr);
