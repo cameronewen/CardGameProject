@@ -14,6 +14,7 @@ public class Main {
 	public static boolean softSeventeen = false; // changes what the dealer does when they have a 17 w/ an ace and a six
 	public static Game currentGame;
 	public static int playerMoney = 1000;
+	public static String playerName = "You";
 	
 // MAIN
 	
@@ -76,6 +77,11 @@ public class Main {
 	public static void settingsMenu(Scanner scnr) throws IOException {
 		
 		//TODO add casino default mode / more blackjack variant rules
+		
+		// TODO add player name setter (default is "you"
+		// TODO add max wager setting
+		// TODO add surrendering on / off? (if added, tell cam to modify cpu logic)
+		// TODO add insurance/even money on / off ??? (if added, tell cam to modify cpu logic)
 		
 		boolean returnToMenu = false;
 		
@@ -171,7 +177,7 @@ public class Main {
 		
 		//TODO payouts / save new total to file
 		
-		// release game variables? add method to Game to release all objects to save space.
+		// release currentGame add method to Game to release all objects to save space.
 		
 		System.out.println("Returning to menu\n");
 		menu(scnr);
