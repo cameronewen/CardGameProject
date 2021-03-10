@@ -29,13 +29,14 @@ public class Game {
 	
 // METHODS
 	
-	public void placeWagers() {
+	public void placeWagers() { //TODO
 		
 		// players selects wager (add max to settings?) all wagers / returns from here are decided by game rules
 		
 	}
 	
-	public void dealCards() {
+	public void dealCards() { //TODO
+		
 		
 		// deal first card to dealer (hidden) (dealer.getHand().addCard(deck.dealCard())
 		// first card to player
@@ -47,7 +48,7 @@ public class Game {
 		
 	}
 	
-	public void playHands() {
+	public void playHands() { // TODO
 		
 		// player first (method should be in user class)
 		// then cpus (method wip in cpuPlayer class)
