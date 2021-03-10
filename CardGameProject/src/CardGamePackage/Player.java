@@ -26,7 +26,7 @@ public class Player { // this is not the user, this class includes npcs
 	public void splitHand(Hand handToSplit) {
 		// if the hands has only two cards AND the hand has been split less than twice AND the cards are equal
 		if( (handToSplit.getSize() == 2) && 
-			(handToSplit.getTimesSplit() < Hand.maxSplits) &&
+			(handToSplit.getTimesSplit() < Main.maxSplits) &&
 			( 	(handToSplit.getCard(0).getValue() 	== handToSplit.getCard(1).getValue()) || 
 				(handToSplit.getCard(0).getRank() 	== handToSplit.getCard(1).getRank())  )){
 			
@@ -45,8 +45,8 @@ public class Player { // this is not the user, this class includes npcs
 			
 			System.out.println("DEBUG: You can't split this hand!"); // this shouldn't happen in game, option shouldn't be offered if they can't split
 			
-			if( !(handToSplit.getTimesSplit() < Hand.maxSplits) ) {
-				System.out.println("DEBUG: handToSplit.getTimesSplit() < Hand.maxSplits");
+			if( !(handToSplit.getTimesSplit() < Main.maxSplits) ) {
+				System.out.println("DEBUG: handToSplit.getTimesSplit() < Main.maxSplits");
 			}
 			
 			if(handToSplit.getCard(0).getValue() != handToSplit.getCard(1).getValue()) {

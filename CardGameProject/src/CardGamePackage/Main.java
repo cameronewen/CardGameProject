@@ -12,6 +12,7 @@ public class Main {
 	public static int numOfDecks = 4; // the default number of decks, changeable in settings
 	public static int numOfPlayers = 1; // default is 1 on 1 with the dealer, changeable in options
 	public static boolean softSeventeen = false; // changes what the dealer does when they have a 17 w/ an ace and a six
+	public static int maxSplits = 2;
 	public static Game currentGame;
 	public static int playerMoney = 1000;
 	public static String playerName = "You";
