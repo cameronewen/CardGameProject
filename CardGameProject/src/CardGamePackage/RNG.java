@@ -1,38 +1,14 @@
 package CardGamePackage;
+import java.util.Random;
 
 public class RNG {
 	
 	
 	public RNG() {
 	
-	//This is a Random Number Generator used to shuffle the cards in the deck
-		//I'm considering adding a method "Timekey() that changes the long from timeMillis into an int and
-		//then the timeMillis can be used as key for any randomNumberGenerator, including the boolean 
-		//for CPUplayers
-		
-	// Xsubn-1 = (aXsubn + b) mod m
 	}
 	
-	public static int Timekey() {
-		
-		long y = System.currentTimeMillis();
-		int x = (int) y;
-		return x;
-		
-	}
-	
-	public static int RandomNumberGenerator(int modByNumber) {
-	
-	    //System.out.println("Timekey = " + Timekey());
-		int x = Timekey();
-		
-		int result = x%modByNumber;
-		
-		//System.out.println("RNG TM mod 51 = " + x);
-		
-		return result;
-		
-	}
+
 
 	public static boolean randomBoolean() {
 		

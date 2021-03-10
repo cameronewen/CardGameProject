@@ -78,10 +78,11 @@ public class Deck {
 		Card temp;
 		int randomIndex;
 		
+		Random random = new Random();
 		
 		for(int i = 0; i < cardDeck.size(); i++) {
 			
-			randomIndex = RNG.RandomNumberGenerator(cardDeck.size()); // rand index is chosen
+			randomIndex = random.nextInt(cardDeck.size()); // rand index is chosen
 			System.out.print(i + ": "); // debug
 			System.out.println(randomIndex); // debug 
 			temp = cardDeck.get(randomIndex); // the card at random point is saved to temp
