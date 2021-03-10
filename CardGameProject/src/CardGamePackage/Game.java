@@ -29,7 +29,31 @@ public class Game {
 	
 // METHODS
 	
+	public void placeWagers() {
+		
+		// players selects wager (add max to settings?) all wagers / returns from here are decided by game rules
+		
+	}
 	
+	public void dealCards() {
+		
+		// deal first card to dealer (hidden) (dealer.getHand().addCard(deck.dealCard())
+		// first card to player
+		// first card to each cpu (for loop on cpu, if no cpus, for loop wont run)
+		
+		// repeat for second card
+		
+		// print each card as it comes out? format being like ?? (Player Name): (Card Title)
+		
+	}
+	
+	public void playHands() {
+		
+		// player first (method should be in user class)
+		// then cpus (method wip in cpuPlayer class)
+		// then dealer players hand mechinically
+		
+	}
 	
 // GETTERS AND SETTERS
 	

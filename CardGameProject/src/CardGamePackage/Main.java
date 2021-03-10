@@ -171,6 +171,8 @@ public class Main {
 		
 		//TODO payouts / save new total to file
 		
+		// release game variables? add method to Game to release all objects to save space.
+		
 		System.out.println("Returning to menu\n");
 		menu(scnr);
 		
