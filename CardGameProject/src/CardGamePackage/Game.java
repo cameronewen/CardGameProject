@@ -18,7 +18,7 @@ public class Game {
 		deck = new Deck(Main.numOfDecks);
 		user = new User(Main.playerName, Main.playerMoney);
 		
-		for(int i = 0; i < Main.numOfPlayers; i++) {
+		for(int i = 0; i < Main.numOfCpuPlayers; i++) {
 			
 			cpuList.add(new CpuPlayer()); // TODO add name randomization 
 			// NOTE: name rng method already created in RNG, currently puts out "john smith"

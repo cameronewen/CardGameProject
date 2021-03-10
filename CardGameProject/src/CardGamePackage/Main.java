@@ -9,13 +9,17 @@ public class Main {
 
 // FIELDS
 	
-	public static int numOfDecks = 4; // the default number of decks, changeable in settings
-	public static int numOfPlayers = 1; // default is 1 on 1 with the dealer, changeable in options
-	public static boolean softSeventeen = false; // changes what the dealer does when they have a 17 w/ an ace and a six
-	public static int maxSplits = 2;
 	public static Game currentGame;
 	public static int playerMoney = 1000;
+	
+	// SETTINGS
+	
+	public static int numOfDecks = 4; // the default number of decks, changeable in settings
+	public static int numOfCpuPlayers = 0; // default is 1 on 1 with the dealer, changeable in options
+	public static boolean softSeventeen = false; // changes what the dealer does when they have a 17 w/ an ace and a six
+	public static int maxSplits = 2;
 	public static String playerName = "You";
+	
 	
 // MAIN
 	
@@ -83,6 +87,7 @@ public class Main {
 		// TODO add max wager setting
 		// TODO add surrendering on / off? (if added, tell cam to modify cpu logic)
 		// TODO add insurance/even money on / off ??? (if added, tell cam to modify cpu logic)
+		// TODO add max splits to settings
 		
 		boolean returnToMenu = false;
 		
@@ -104,10 +109,10 @@ public class Main {
 					break;
 					
 				case 2:
-					System.out.println("Current number of CPU players: " + (numOfPlayers - 1)); // minus the player
+					System.out.println("Current number of CPU players: " + (numOfCpuPlayers)); // minus the player
 					System.out.println("Enter desired number of CPU players (Max 6): ");
 					
-					numOfPlayers = getIntFromScannerRanged(scnr, 0, 6) + 1; // the +1 is for the user player
+					numOfCpuPlayers = getIntFromScannerRanged(scnr, 0, 6); // the +1 is for the user player
 					break;
 					
 				case 3: 
@@ -115,7 +120,6 @@ public class Main {
 					System.out.println("Soft 17 is now " + softSeventeen);
 					break;
 				
-				case 4: // should spill over to default?
 				default:
 					returnToMenu = true;
 					
