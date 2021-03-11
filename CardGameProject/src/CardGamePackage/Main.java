@@ -37,7 +37,7 @@ public class Main {
 		//mykelTest();
 		//camTest();
 		
-		//menu(scnr);
+		menu(scnr);
 		
 		System.out.println("\nGame Closing");
 		
