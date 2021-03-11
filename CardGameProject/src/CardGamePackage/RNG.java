@@ -3,11 +3,8 @@ import java.util.Random;
 
 public class RNG {
 	
-	
-	public RNG() {
-	
-	}
-	
+	private static String[] firstNames = {"Cameron", "Dawson", "My'kel", "Jack", "Shun", "Joshua", "Micheal", "Mehmet", "Olivia", "Misaki", "Emma", "Maricel", "Zeynep", "Maeve", "Lukas", "Jan", "Magnus", "Rasmus", "Sean", "Francesco", "Tereza", "Ona", "Lucia", "Juan", "Samuel", "Mohamed", "Bilal", "Omar", "Fadi", "Peter", "Mina", "Markos", "Beshoi", "Karim", "Soleil", "Farma", "Maha", "Hasnaa", "Rowan", "Ruth", "Aya", "Farah", "Hana", "Valentina", "Davit", "Wei", "Ori", "Krishna", "Nathaniel", "Tamar", "Aadya", "Jing", "Mariam", "Odval", "Leo", "Luiza", "Trin", "Lizbert", "Alina", "Kate", "Ray", "Autumn", "Ryuichi", "Chihiro", "Reigi"};
+	private static String[] lastNames = {"Rodriguez", "Da Silva", "Mamani", "Persaud", "Smith", "Jean", "Charles", "Clarke", "Ivanova", "Khan", "Sok", "Sari", "Devi", "Dela Cruz", "Cohen", "Mohammadi", "John", "Kumar", "Latu", "Meredith", "Ioane", "Abdou", "Ali", "Nkosi", "Rakotomalala", "Kamara", "Jallow", "Martin", "Rossi", "Nowak", "De Jong", "Jensen", "Ewen", "Glass", "Swan", "Hatsune", "Gavin", "Justice", "Edgeworth", "Wright", "Valentine", "Louis", "Bandomere", "Lamda", "Doe", "Hern", "Johnson", "Pip", "Gold", "Deller", "McDaniels", "Lacey-Kinsey", "Hitch", "Fizzlebean", "Mitsurugi", "Naruhodo", "Sato", "Ito", "Watanabe"}; 
 
 
 	public static boolean randomBoolean() {
@@ -15,8 +12,6 @@ public class RNG {
 		boolean randBoolean = false;
 		Random random = new Random();
 		int randomIndex = random.nextInt(2);
-		
-		
 		
 		switch(randomIndex) {
 
@@ -31,8 +26,7 @@ public class RNG {
 		default:
 			System.out.println("Something went wrong with the randBoolean generator.");
 
-	}
-		
+		} // end switch
 		
 		return randBoolean;
 		
@@ -40,10 +34,11 @@ public class RNG {
 	
 	public static String randomName() {
 		
-		// this is for naming CPUs and the dealer eventually, the John Smith thing is filler
-		// so it works in the meantime
+		Random random = new Random();
+		String firstName = firstNames[random.nextInt(firstNames.length)];
+		String lastName = lastNames[random.nextInt(lastNames.length)];
 		
-		return "John Smith";
+		return firstName + " " + lastName;
 		
 	}
 }
