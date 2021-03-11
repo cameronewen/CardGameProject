@@ -32,11 +32,15 @@ public class Game {
 	public void placeWagers() { //TODO
 		
 		// players selects wager (add max to settings?) all wagers / returns from here are decided by game rules
+		// cpus place wagers (random int generator ?) for loop for each cpu
+
 		
 	}
 	
-	public void dealCards() { //TODO
+	public void dealCards() { //TODO deal cards to all players ( have an arraylist of cpuplayers thats cycled through?) (User -> Any CPUs -> Dealer)
+		// print cards of players as they're dealed, except for dealer, whose upcard is printe
 		
+		// - Mykel
 		
 		// deal first card to dealer (hidden) (dealer.getHand().addCard(deck.dealCard())
 		// first card to player
@@ -56,6 +60,9 @@ public class Game {
 		
 	}
 	
+	public void payout() {
+		// announce players winnings if theyve made it this far / and cpu winnings?
+	}
 // GETTERS AND SETTERS
 	
 	public Dealer getDealer() {
@@ -92,6 +99,11 @@ public class Game {
 	
 	public void clearCpuList() {
 		cpuList.clear();
+	}
+
+	public void release() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

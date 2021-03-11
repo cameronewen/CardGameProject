@@ -18,6 +18,8 @@ public class Main {
 	public static int numOfCpuPlayers = 0; // default is 1 on 1 with the dealer, changeable in options
 	public static boolean softSeventeen = false; // changes what the dealer does when they have a 17 w/ an ace and a six
 	public static int maxSplits = 2;
+	public static int maxWager = 20; // TODO add adjust in settings. maximum wager player can make
+	public static int minWager = 2; // TODO add adjust in settings. minimum wager player can make.
 	public static String playerName = "You";
 	
 	
@@ -28,10 +30,13 @@ public class Main {
 		Scanner scnr = new Scanner(System.in);
 		
 		System.out.println("Welcome to BlackJack\n");
-		mykelTest();
+		
+		loadSettings(); //TODO create default settings file
+		
+		//mykelTest();
+		//camTest();
 		
 		menu(scnr);
-		//camTest();
 		
 		System.out.println("\nGame Closing");
 		
@@ -69,13 +74,14 @@ public class Main {
 	
 	public static void saveSettings() {
 		
-		
+		// saves player name, money, and settings fields
+		// for mykel
 		
 	}
 	
 	public static void loadSettings() {
 		
-		
+		// for mykel
 		
 	}
 	
@@ -121,6 +127,7 @@ public class Main {
 		
 		//TODO add casino default mode / more blackjack variant rules
 		
+		// - CAM
 		// TODO add player name setter (default is "you"
 		// TODO add max wager setting
 		// TODO add surrendering on / off? (if added, tell cam to modify cpu logic)
@@ -161,6 +168,8 @@ public class Main {
 				default:
 					returnToMenu = true;
 					
+				saveSettings();
+					
 			} // end switch
 			
 		} // end while
@@ -178,24 +187,19 @@ public class Main {
 		
 		System.out.println("playGame() called\n");
 		
-		// load current money from file?
-		
 		currentGame = new Game();
 		
-		// player places wager on hand, then cpus (TODO add max wager setting)
+		currentGame.placeWagers(); // cam
 		
-		//TODO deal cards to all players ( have an arraylist of cpuplayers thats cycled through?) (User -> Any CPUs -> Dealer)
-				// print cards of players as they're dealed, except for dealer, whose upcard is printed
+		currentGame.dealCards(); // mykel
 		
-		//TODO users turn (dynamic hit, stand, split, double down, surrender)
+		currentGame.playHands(); // cam
+
+		currentGame.payout(); // cam
 		
-		//TODO CPUs turns
+		currentGame = null;
 		
-		//TODO dealer turns
-		
-		//TODO payouts / save new total to file
-		
-		// release currentGame add method to Game to release all objects to save space.
+		saveSettings(); // mykel ( do after cam finishes settings )
 		
 		System.out.println("Returning to menu\n");
 		menu(scnr);
