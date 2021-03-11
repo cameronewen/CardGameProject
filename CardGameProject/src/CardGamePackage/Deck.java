@@ -83,8 +83,7 @@ public class Deck {
 		for(int i = 0; i < cardDeck.size(); i++) {
 			
 			randomIndex = random.nextInt(cardDeck.size()); // rand index is chosen
-			System.out.print(i + ": "); // debug
-			System.out.println(randomIndex); // debug 
+			
 			temp = cardDeck.get(randomIndex); // the card at random point is saved to temp
 			
 			cardDeck.set(randomIndex, cardDeck.get(i)); // the card at i is moved to random index
