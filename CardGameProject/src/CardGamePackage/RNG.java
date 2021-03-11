@@ -11,7 +11,7 @@ public class RNG {
 
 
 	public static boolean randomBoolean() {
-		
+		//random Boolean is for CPU logic splitting the deck
 		boolean randBoolean = false;
 		Random random = new Random();
 		int randomIndex = random.nextInt(2);
