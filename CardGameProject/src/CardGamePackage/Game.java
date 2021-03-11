@@ -38,6 +38,21 @@ public class Game {
 	}
 	
 	public void dealCards() { //TODO deal cards to all players ( have an arraylist of cpuplayers thats cycled through?) (User -> Any CPUs -> Dealer)
+		Deck gameDeck = new Deck();
+		
+		gameDeck.shuffleDeck();
+		
+		//Test zone open
+		
+            for(int i = 0; i < gameDeck.getDeckSize(); i++) {
+			
+			System.out.println(gameDeck.getCardAtIndex(i).getName());
+		
+		}
+		//Test zone closed
+		
+		
+		
 		// print cards of players as they're dealed, except for dealer, whose upcard is printe
 		
 		// - Mykel

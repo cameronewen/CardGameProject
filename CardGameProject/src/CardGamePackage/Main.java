@@ -34,7 +34,7 @@ public class Main {
 		
 		loadSettings(); //TODO create default settings file
 		
-		//mykelTest();
+		mykelTest();
 		//camTest();
 		
 		menu(scnr);
@@ -268,14 +268,11 @@ public class Main {
 	
 	public static void mykelTest() {
 		
-		Deck testDeck = new Deck();
-		testDeck.shuffleDeck();
-	
-		for(int i = 0; i < testDeck.getDeckSize(); i++) {
-			
-			System.out.println(testDeck.getCardAtIndex(i).getName());
+		Game testDeck = new Game();
 		
-		}
+		testDeck.dealCards();
+		
+	
 
 		
 	}
