@@ -20,11 +20,11 @@ public class RNG {
 		
 		switch(randomIndex) {
 
-		case 1:
+		case 0:
 			randBoolean = false;
 			break;
 
-		case 2:
+		case 1:
 			randBoolean = true;
 			break;
 			
