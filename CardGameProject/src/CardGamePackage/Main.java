@@ -16,10 +16,11 @@ public class Main {
 	
 	public static int numOfDecks = 4; // the default number of decks, changeable in settings
 	public static int numOfCpuPlayers = 0; // default is 1 on 1 with the dealer, changeable in options
-	public static boolean softSeventeen = false; // changes what the dealer does when they have a 17 w/ an ace and a six
+	
 	public static int maxSplits = 2;
 	public static int maxWager = 20; // TODO add adjust in settings. maximum wager player can make
 	public static int minWager = 2; // TODO add adjust in settings. minimum wager player can make.
+	public static boolean softSeventeen = false; // changes what the dealer does when they have a 17 w/ an ace and a six
 	public static String playerName = "You";
 	
 	
@@ -36,7 +37,7 @@ public class Main {
 		//mykelTest();
 		//camTest();
 		
-		menu(scnr);
+		//menu(scnr);
 		
 		System.out.println("\nGame Closing");
 		
@@ -125,52 +126,66 @@ public class Main {
 	
 	public static void settingsMenu(Scanner scnr) throws IOException {
 		
-		//TODO add casino default mode / more blackjack variant rules
-		
 		// - CAM
-		// TODO add player name setter (default is "you"
-		// TODO add max wager setting
 		// TODO add surrendering on / off? (if added, tell cam to modify cpu logic)
 		// TODO add insurance/even money on / off ??? (if added, tell cam to modify cpu logic)
-		// TODO add max splits to settings
 		
 		boolean returnToMenu = false;
 		
 		while(!returnToMenu) {
-			System.out.println("1. Number of Decks");
-			System.out.println("2. Number of CPU Players");
-			System.out.println("3. Toggle Soft 17 (Currently " + softSeventeen + ")");
-			System.out.println("4. Return to Menu\n");
+			System.out.println("1. Player Name:			" + playerName
+							+ "\n2. Number of Decks:		" + numOfDecks
+							+ "\n3. Number of CPU Players:	" + numOfCpuPlayers
+							+ "\n4. Max Splits Per Hand:		" + maxSplits
+							+ "\n5. Wager Limits: 		Min " + minWager + ", Max " + maxWager
+							+ "\n6. Soft 17:			" + softSeventeen
+							+ "\n7. Return to Menu\n");
 			
-			int userChoice = getIntFromScannerRanged(scnr, 1, 4);
+			int userChoice = getIntFromScannerRanged(scnr, 1, 7);
 			
 			switch(userChoice) {
 				
-				case 1:
-					System.out.println("Current number of decks: " + numOfDecks);
+				case 1: 
+					System.out.println("Enter new player name: ");
+					playerName = scnr.nextLine();
+					System.out.println();
+					break;
+				
+				case 2:
 					System.out.println("Enter desired number of decks (Max 8): ");
-					
 					numOfDecks = getIntFromScannerRanged(scnr, 1, 8);
 					break;
 					
-				case 2:
-					System.out.println("Current number of CPU players: " + (numOfCpuPlayers));
+				case 3:
 					System.out.println("Enter desired number of CPU players (Max 6): ");
-					
 					numOfCpuPlayers = getIntFromScannerRanged(scnr, 0, 6);
 					break;
+				
+				case 4:
+					System.out.println("Enter desired maximum of splits per hand (Max 10): ");
+					maxSplits = getIntFromScannerRanged(scnr, 0, 10);
+					break;
+				
+				case 5:
+					System.out.println("Enter minimum wager: (Max 100)");
+					minWager = getIntFromScannerRanged(scnr, 0, 100);
+					System.out.println("Enter maximum wager: (Between " + minWager + " and 100");
+					maxWager = getIntFromScannerRanged(scnr, minWager, 100);
+					break;
 					
-				case 3: 
+				case 6: 
 					softSeventeen = !softSeventeen;
 					System.out.println("Soft 17 is now " + softSeventeen);
 					break;
 				
+				
 				default:
 					returnToMenu = true;
+					break;
 					
-				saveSettings();
-					
-			} // end switch
+				} // end switch
+			
+			saveSettings();
 			
 		} // end while
 			
@@ -268,22 +283,27 @@ public class Main {
 	public static void camTest() {
 		
 		
-		currentGame = new Game(); // add new game
-		currentGame.setDeck(new Deck()); // add deck to draw from
-		currentGame.clearCpuList(); // clear cpus
-		currentGame.addCpu(new CpuPlayer()); // add new plain cpu
+//		currentGame = new Game(); // add new game
+//		currentGame.setDeck(new Deck()); // add deck to draw from
+//		currentGame.clearCpuList(); // clear cpus
+//		currentGame.addCpu(new CpuPlayer()); // add new plain cpu
+//		
+//		Hand cpuHand = currentGame.getCpu(0).getHand(0);
+//		Hand dealerHand = currentGame.getDealer().getHand();
+//		CpuPlayer cpu = currentGame.getCpu(0);
+//		
+//		dealerHand.addCard(new Card(Rank.TWO, Suit.HEARTS));
+//		dealerHand.addCard(new Card(Rank.TEN, Suit.CLUBS));
+//		
+//		cpuHand.addCard(new Card(Rank.EIGHT, Suit.HEARTS));
+//		cpuHand.addCard(new Card(Rank.EIGHT, Suit.HEARTS));
+//		
+//		cpu.playHandCPU();
 		
-		Hand cpuHand = currentGame.getCpu(0).getHand(0);
-		Hand dealerHand = currentGame.getDealer().getHand();
-		CpuPlayer cpu = currentGame.getCpu(0);
-		
-		dealerHand.addCard(new Card(Rank.TWO, Suit.HEARTS));
-		dealerHand.addCard(new Card(Rank.TEN, Suit.CLUBS));
-		
-		cpuHand.addCard(new Card(Rank.EIGHT, Suit.HEARTS));
-		cpuHand.addCard(new Card(Rank.EIGHT, Suit.HEARTS));
-		
-		cpu.playHandCPU();
+		for(int i = 0; i < 100; i++) {
+			CpuPlayer newCpu = new CpuPlayer();
+			System.out.println(newCpu.getName());
+		}
 		
 		
 	}
