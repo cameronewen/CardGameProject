@@ -73,7 +73,7 @@ public class Deck {
 	
 	
 	public void shuffleDeck() {
-	
+	  
 		
 		Card temp;
 		int randomIndex;

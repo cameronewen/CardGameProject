@@ -42,13 +42,13 @@ public class Game {
 		
 		gameDeck.shuffleDeck();
 		
+		
+		
 		//Test zone open
 		
-            for(int i = 0; i < gameDeck.getDeckSize(); i++) {
-			
-			System.out.println(gameDeck.getCardAtIndex(i).getName());
+           
 		
-		}
+		
 		//Test zone closed
 		
 		
