@@ -4,16 +4,16 @@ public class User extends Player{
 	
 	public int totalMoney;
 
-	public User(String name, int money) {
+	public User(int money) {
 		
-		super(name);
+		super(Main.playerName + " (You)");
 		this.totalMoney = money;
 		
 	}
 	
-	public User(String name) {
+	public User() {
 		
-		super(name);
+		super(Main.playerName + " (You)");
 		this.totalMoney = 100;
 		
 	}
