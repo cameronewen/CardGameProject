@@ -10,12 +10,12 @@
        To win:
                
               1. Draw a hand higher than the dealer, but lower than 22 (1.5x wager)
-			  2. Dealer draws a hand over 21. (keep wager)
-			  3. Draw a hand value of 21 on first two cards, dealer doesn’t. (1.5x wager)
+	      2. Dealer draws a hand over 21. (keep wager)
+	      3. Draw a hand value of 21 on first two cards, dealer doesn’t. (1.5x wager)
               
        
        Lose: 
-      		  1. Hand value exceeds 21.
+      	      1. Hand value exceeds 21.
               2. Dealer has a greater value than you at the end of the round.
               
         
