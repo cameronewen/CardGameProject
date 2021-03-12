@@ -8,14 +8,16 @@ public class Player { // this is not the user, this class includes npcs
 	
 	protected ArrayList<Hand> playerHands = new ArrayList<Hand>(); // players can have multiple hands thanks to splitting
 	protected String name;
+	protected int money;
 
 	
 // CONSTRUCTOR
 	
-	public Player(String name) {
+	public Player(String name, int money) {
 		
 		playerHands.add(new Hand());
 		this.name = name;
+		this.money = money;
 		
 	}
 	
@@ -27,6 +29,7 @@ public class Player { // this is not the user, this class includes npcs
 		// if the hands has only two cards AND the hand has been split less than twice AND the cards are equal
 		if( (handToSplit.getSize() == 2) && 
 			(handToSplit.getTimesSplit() < Main.maxSplits) &&
+			(money >= handToSplit.getWager()) &&
 			( 	(handToSplit.getCard(0).getValue() 	== handToSplit.getCard(1).getValue()) || 
 				(handToSplit.getCard(0).getRank() 	== handToSplit.getCard(1).getRank())  )){
 			
@@ -38,6 +41,8 @@ public class Player { // this is not the user, this class includes npcs
 			
 			handToSplit.addCard(Main.currentGame.getDeck().dealCard()); // adds a new card to each hand from the deck
 			newHand.addCard(Main.currentGame.getDeck().dealCard()); 
+			
+			newHand.setWager(handToSplit.getWager()); // sets wager of new hand equal to first hand
 			
 			playerHands.add(newHand); // add the new hand to the players hands
 			
@@ -84,4 +89,13 @@ public class Player { // this is not the user, this class includes npcs
 		return playerHands.get(handIndex).getCard(cardIndex);
 	}
 	
+	public int getMoney() {
+		return money;
+	}
+	
+	public void setMoney(int money) {
+		
+		this.money = money;
+		
+	}
 }
