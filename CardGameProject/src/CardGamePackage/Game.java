@@ -1,6 +1,8 @@
 package CardGamePackage;
 
 import java.util.ArrayList;
+import java.util.Random;
+import java.util.Scanner;
 
 public class Game {
 	
@@ -29,11 +31,45 @@ public class Game {
 	
 // METHODS
 	
-	public void placeWagers() { //TODO
+	public void placeWagers(Scanner scnr) {
 		
-		// players selects wager (add max to settings?) all wagers / returns from here are decided by game rules
-		// cpus place wagers (random int generator ?) for loop for each cpu
+		Random rng = new Random();
+		
+		System.out.println("Wagers\n\nMinimum Wager: $" + Main.minWager + "\nMaximum Wager: $" + Main.maxWager);
+		System.out.println("\nCurrent Wallet: $" + Main.playerMoney + "\n");
+		
+	
+		if(Main.playerMoney < Main.minWager) { // if they dont have enough to make min bet, add min wager to their account.
+			
+			System.out.println("You don't have enough money to bet, have $" + Main.minWager + " on us.");
+			
+			Main.playerMoney += Main.minWager; // gives player minimum wager amount
+			System.out.println("\nCurrent Wallet: $" + Main.playerMoney + "\n");
+		}
+		
+		System.out.println("Place a wager on this game: ");
 
+		user.getHand(0).setWager(Main.getIntFromScannerRanged(scnr, Main.minWager, Main.maxWager)); // asks for wager between min / max
+		
+		if(user.getHand(0).getWager() > Main.playerMoney) { // if wager is greater than the money they have, get num between min and player money
+			
+			System.out.println("Slow down there, you don't have enough cash for that bet.");
+			user.getHand(0).setWager(Main.getIntFromScannerRanged(scnr, Main.minWager, Main.playerMoney));
+			
+		}
+		
+		Main.playerMoney -= user.getHand(0).getWager();
+
+		System.out.println("Current Wallet: $" + Main.playerMoney + "\n");
+		
+		for(int i = 0; i < cpuList.size(); i++) {
+			
+			int wager = rng.nextInt((Main.maxWager - Main.minWager)) + Main.minWager;
+			
+			cpuList.get(i).getHand(0).setWager(wager);
+			System.out.println(cpuList.get(i).getName() + " wagered $" + wager + "\n");
+			
+		}
 		
 	}
 	

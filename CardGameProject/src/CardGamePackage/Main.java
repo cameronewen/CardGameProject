@@ -34,10 +34,10 @@ public class Main {
 		
 		loadSettings(); //TODO create default settings file
 		
-		mykelTest();
-		//camTest();
+		//mykelTest();
+		camTest(scnr);
 		
-		menu(scnr);
+		//menu(scnr);
 		
 		System.out.println("\nGame Closing");
 		
@@ -204,7 +204,7 @@ public class Main {
 		
 		currentGame = new Game();
 		
-		currentGame.placeWagers(); // cam
+		currentGame.placeWagers(scnr); // cam
 		
 		currentGame.dealCards(); // mykel
 		
@@ -277,30 +277,12 @@ public class Main {
 		
 	}
 	
-	public static void camTest() {
+	public static void camTest(Scanner scnr) {
 		
-		
-//		currentGame = new Game(); // add new game
-//		currentGame.setDeck(new Deck()); // add deck to draw from
-//		currentGame.clearCpuList(); // clear cpus
-//		currentGame.addCpu(new CpuPlayer()); // add new plain cpu
-//		
-//		Hand cpuHand = currentGame.getCpu(0).getHand(0);
-//		Hand dealerHand = currentGame.getDealer().getHand();
-//		CpuPlayer cpu = currentGame.getCpu(0);
-//		
-//		dealerHand.addCard(new Card(Rank.TWO, Suit.HEARTS));
-//		dealerHand.addCard(new Card(Rank.TEN, Suit.CLUBS));
-//		
-//		cpuHand.addCard(new Card(Rank.EIGHT, Suit.HEARTS));
-//		cpuHand.addCard(new Card(Rank.EIGHT, Suit.HEARTS));
-//		
-//		cpu.playHandCPU();
-		
-		for(int i = 0; i < 100; i++) {
-			CpuPlayer newCpu = new CpuPlayer();
-			System.out.println(newCpu.getName());
-		}
+		numOfCpuPlayers = 6;
+		playerMoney = 1;
+		currentGame = new Game(); // add new game
+		currentGame.placeWagers(scnr);
 		
 		
 	}
