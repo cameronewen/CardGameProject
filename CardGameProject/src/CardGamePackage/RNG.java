@@ -41,4 +41,16 @@ public class RNG {
 		return firstName + " " + lastName;
 		
 	}
+
+	public static int cpuMoneyRandom() { // assigns the cpu a cash allowance (used to determine split/dd)
+		
+		Random rng = new Random();
+		int cpuMoney;
+		
+		cpuMoney = rng.nextInt(2*Main.maxWager); // random number between 0 and 2 times the max wager
+		cpuMoney += Main.minWager; // adds min wager to make sure they can wager w/in the rules
+		
+		return cpuMoney;
+		
+	}
 }
