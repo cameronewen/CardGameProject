@@ -1,20 +1,16 @@
 package CardGamePackage;
 
 public class User extends Player{
-	
-	public int totalMoney;
 
 	public User(int money) {
 		
-		super(Main.playerName + " (You)");
-		this.totalMoney = money;
+		super(Main.playerName + " (You)", money);
 		
 	}
 	
 	public User() {
 		
-		super(Main.playerName + " (You)");
-		this.totalMoney = 100;
+		super(Main.playerName + " (You)", Main.playerMoney);
 		
 	}
 	
