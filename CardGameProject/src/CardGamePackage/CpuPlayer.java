@@ -4,7 +4,7 @@ public class CpuPlayer extends Player{
 
 	public CpuPlayer() {
 		
-		super(RNG.randomName() + " (CPU)");
+		super(RNG.randomName() + " (CPU)", RNG.cpuMoneyRandom());
 		
 	}
 
