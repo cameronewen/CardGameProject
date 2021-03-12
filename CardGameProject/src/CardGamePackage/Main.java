@@ -37,7 +37,7 @@ public class Main {
 		//mykelTest();
 		camTest(scnr);
 		
-		//menu(scnr);
+		menu(scnr);
 		
 		System.out.println("\nGame Closing");
 		
@@ -169,7 +169,7 @@ public class Main {
 				case 5:
 					System.out.println("Enter minimum wager: (Max 100)");
 					minWager = getIntFromScannerRanged(scnr, 0, 100);
-					System.out.println("Enter maximum wager: (Between " + minWager + " and 100");
+					System.out.println("Enter maximum wager: (Between " + minWager + " and 100)");
 					maxWager = getIntFromScannerRanged(scnr, minWager, 100);
 					break;
 					
@@ -247,16 +247,20 @@ public class Main {
 			try {
 				
 				userNum = Integer.parseInt(userInputString.replaceAll(" ", ""));
-						
+				
+				
+				
 			} catch (NumberFormatException e) {
 				
-				System.out.println("Fail.");
+				
 				
 			}
 			
 			if(userNum < low || userNum > high) {
-				System.out.println("Invalid input, please enter a int between " + low + " and " + high + ".");
-			}
+				
+					System.out.println("Invalid input, please enter a int between " + low + " and " + high + ".");
+			
+				}
 	    
 		} while (userNum < low || userNum > high);
         
@@ -278,11 +282,6 @@ public class Main {
 	}
 	
 	public static void camTest(Scanner scnr) {
-		
-		numOfCpuPlayers = 6;
-		playerMoney = 1;
-		currentGame = new Game(); // add new game
-		currentGame.placeWagers(scnr);
 		
 		
 	}
