@@ -1,4 +1,1 @@
-
-
-
-       This document is a test for uploading settings. 
+Hello world

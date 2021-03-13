@@ -73,11 +73,13 @@ public class Main {
 		
 	}
 	
-	public static void saveSettings() {
+	public static void saveSettings() throws IOException {
 		
-		// saves player name, money, and settings fields
-		// for mykel
+		  FileWriter settings = new FileWriter("src/settings.txt");// saves player name, money, and settings fields
+		settings.write("Hello world");// for mykel
 		
+		 settings.flush();
+	     settings.close();
 	}
 	
 	public static void loadSettings() throws IOException {
@@ -286,6 +288,7 @@ public class Main {
 	
 	public static void mykelTest() throws IOException {
 		
+		saveSettings();
 		loadSettings();
 		
 	
