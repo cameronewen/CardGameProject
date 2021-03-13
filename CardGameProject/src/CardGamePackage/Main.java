@@ -76,7 +76,7 @@ public class Main {
 	public static void saveSettings() throws IOException {
 		
 		  FileWriter settings = new FileWriter("src/settings.txt");// saves player name, money, and settings fields
-		settings.write("Hello world");// for mykel
+		settings.write("chickens");// for mykel
 		
 		 settings.flush();
 	     settings.close();
