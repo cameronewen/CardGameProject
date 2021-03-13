@@ -37,7 +37,7 @@ public class Main {
 		//mykelTest();
 		camTest(scnr);
 		
-		menu(scnr);
+		//menu(scnr);
 		
 		System.out.println("\nGame Closing");
 		
@@ -272,17 +272,26 @@ public class Main {
 	
 	public static void mykelTest() {
 		
-		Game testDeck = new Game();
+		currentGame = new Game();
 		
-		testDeck.dealCards();
+		currentGame.dealCards();
 		
 	
 
 		
 	}
 	
-	public static void camTest(Scanner scnr) {
+	public static void camTest(Scanner scnr) throws IOException {
 		
+		currentGame = new Game();
+		
+		currentGame.getDealer().getHand().addCard(new Card(Rank.TEN, Suit.DIAMONDS));
+		currentGame.getDealer().getHand().addCard(new Card(Rank.SEVEN, Suit.DIAMONDS));
+		softSeventeen = true;
+		
+		System.out.println(currentGame.getDealer().getHand().getCard(1).getName() + "\n");
+		
+		currentGame.playHands();
 		
 	}
 	

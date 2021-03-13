@@ -20,13 +20,35 @@ public class Dealer { // the "dealer" might not need to do much at all besides h
 	
 	public void playHand() {
 		
-		// reveal holecard
+		System.out.println("Dealer's upcard: " + dealerHand.getCard(1).getName() + "\n");
 		
-		// if >= 17, they stand (if soft 17 is on, and theres an ace, they convert it to 1)
+		System.out.println("The dealer reveals hole card: \n");
+		System.out.println(dealerHand.getCard(0).getName() + " (" + dealerHand.getValue() + ")\n");
 		
-		// if <= 16, they hit
+		while(dealerHand.getValue() < 17 		|| 
+			 (  (dealerHand.getSize() == 2) 	&& 
+				(dealerHand.getValue() == 17) 	&&
+				(dealerHand.numOfAces() > 0)	&&
+				(Main.softSeventeen) 			) ) {
+			
+			
+			Card newCard = Main.currentGame.getDeck().dealCard();
+			dealerHand.addCard(newCard);
+			System.out.println("Dealer hits.\n");
+			System.out.println(newCard.getName() + " (" + dealerHand.getValue() + ")\n");
+			
+			
+		}
 		
-		// they cannot double, split, or surrender. no strats
+		if(dealerHand.getValue() >= 17 && dealerHand.getValue() < 22) {
+			
+			System.out.println("The dealer stands.");
+			
+		} else {
+			
+			System.out.println("The dealer busts.");
+			
+		}
 		
 	}
 	

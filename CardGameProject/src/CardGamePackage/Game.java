@@ -18,6 +18,7 @@ public class Game {
 	public Game() { 
 		dealer = new Dealer();  
 		deck = new Deck(Main.numOfDecks);
+		deck.shuffleDeck();
 		user = new User(Main.playerMoney);
 		
 		for(int i = 0; i < Main.numOfCpuPlayers; i++) {
@@ -120,13 +121,16 @@ public class Game {
 		
 		// player first (method should be in user class)
 		// then cpus (method wip in cpuPlayer class)
-		// then dealer players hand mechinically
+		
+		dealer.playHand();
 		
 	}
 	
 	public void payout() {
 		// announce players winnings if theyve made it this far / and cpu winnings?
 	}
+	
+	
 // GETTERS AND SETTERS
 	
 	public Dealer getDealer() {
