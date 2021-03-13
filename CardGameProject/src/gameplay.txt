@@ -1,14 +1,14 @@
 
 
-           Rules of BlackJack a.k.a. Vingt-et-un
+                            Rules of BlackJack a.k.a. Vingt-et-un
        
        
        Dealer deals two cards to each player. The goal is to have a hand that is closest to 21 points
        without going over. Face cards value at 10 points each. Ace can be valued at 11 points or 1 point. 
-        
-       
+
+
        To win:
-               
+
               1. Draw a hand higher than the dealer, but lower than 22 (1.5x wager)
 	      2. Dealer draws a hand over 21. (keep wager)
 	      3. Draw a hand value of 21 on first two cards, dealer doesn’t. (1.5x wager)
@@ -24,20 +24,19 @@
        
        Options: 
        
-			Stand: The players cards do not change, and the dealer moves on
+		Stand: The players cards do not change, and the dealer moves on
 			
-			Hit: The dealer gives you another card. The player can choose to be hit as many times as 
-			they want, as long as you don’t “bust” (card total goes over 21). The player can choose 
-			to stand when they are satisfied with their hand.
+		Hit: The dealer gives you another card. The player can choose to be hit as many times as 
+		they want, as long as you don’t “bust” (card total goes over 21). The player can choose 
+		to stand when they are satisfied with their hand.
 			
-			Double Down: If the cards look good, the player might choose to double their bet and 
-			receive a single additional card. No more cards can be taken after this. 
-			(in a physical game, the new card is turned sideways to indicate this)
+		Double Down: If the cards look good, the player might choose to double their bet and 
+		receive a single additional card. No more cards can be taken after this. 
+		(in a physical game, the new card is turned sideways to indicate this)
 			
-			Split: If both cards the player received are of equal value (meaning royalty counts, 
-			even if they are different types), the player can add a second wager, the same value as 
-			their first and the two cards will become the first card in two new hands. 
-			(A player can have a max of 4 split hands.)
+		Split: If both cards the player received are of equal value (meaning royalty counts, 
+		even if they are different types), the player can add a second wager, the same value as 
+		their first and the two cards will become the first card in two new hands. 
 			
-			Surrender: The player gives up their hand for half their initial bet.
+		Surrender: The player gives up their hand for half their initial bet.
        

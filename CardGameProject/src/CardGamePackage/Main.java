@@ -3,8 +3,6 @@ import java.io.*;
 import java.util.Scanner;
 
 
-
-
 public class Main {
 	
 
@@ -19,7 +17,7 @@ public class Main {
 	public static int numOfCpuPlayers = 0; // default is 1 on 1 with the dealer, changeable in options
 	
 	public static int maxSplits = 2;
-	public static int maxWager = 20; // TODO add adjust in settings. maximum wager player can make
+	public static int maxWager = 20; // TODO add adjust in settings. maximum wager player can make.
 	public static int minWager = 2; // TODO add adjust in settings. minimum wager player can make.
 	public static boolean softSeventeen = false; // changes what the dealer does when they have a 17 w/ an ace and a six
 	public static String playerName = "You";
@@ -34,8 +32,9 @@ public class Main {
 		System.out.println("Welcome to BlackJack\n");
 		
 		//TODO create default settings file
+		gameRules(scnr);
 		
-		mykelTest();
+		//mykelTest();
 		//camTest(scnr);
 		
 		//menu(scnr);
@@ -51,7 +50,7 @@ public class Main {
 	public static void gameRules(Scanner scnr) throws IOException {
 		
 		//input by My'kel
-		// TODO update gameplay.txt file to reflect game rules
+		
 	
 		FileInputStream fileInputStream = new FileInputStream("src/gameplay.txt");
 		Scanner fileInput = new Scanner(fileInputStream);
@@ -74,6 +73,18 @@ public class Main {
 		
 	}
 	
+	public static void defaultSettings() {
+		
+		 numOfDecks = 4; 
+		 numOfCpuPlayers = 0; 
+		 maxSplits = 2;
+		 maxWager = 20; 
+		 minWager = 2; 
+		 softSeventeen = false;
+		 playerName = "You";
+		
+	}
+	
 	public static void saveSettings() throws IOException {
 	//  mykel
 		
@@ -91,12 +102,10 @@ public class Main {
 			settings.write("false\n");
 		}
 		
-		settings.write(playerName + "\n");
+		settings.write(playerName);
 		
-		
-		
-		 settings.flush();
-	     settings.close();
+		settings.flush();
+	    settings.close();
 	}
 	
 	public static void loadSettings() throws IOException {
@@ -205,7 +214,8 @@ public class Main {
 							+ "\n4. Max Splits Per Hand:		" + maxSplits
 							+ "\n5. Wager Limits: 		Min " + minWager + ", Max " + maxWager
 							+ "\n6. Soft 17:			" + softSeventeen
-							+ "\n7. Return to Menu\n");
+							+ "\n7. Default Settings"
+							+ "\n8. Return to Menu\n");
 			
 			int userChoice = getIntFromScannerRanged(scnr, 1, 7);
 			
@@ -243,6 +253,10 @@ public class Main {
 					softSeventeen = !softSeventeen;
 					System.out.println("Soft 17 is now " + softSeventeen);
 					break;
+					
+				case 7: 
+					defaultSettings();
+					System.out.println("Settings returned to default Casino Rules");
 				
 				
 				default:
@@ -270,7 +284,7 @@ public class Main {
 		
 		currentGame = new Game();
 		
-		currentGame.placeWagers(scnr); // cam
+		//currentGame.placeWagers(scnr); // cam
 		
 		currentGame.dealCards(); // mykel
 		
@@ -280,9 +294,10 @@ public class Main {
 		
 		currentGame = null;
 		
-		saveSettings(); // mykel ( do after cam finishes settings )
+		saveSettings(); // mykel 
 		
 		System.out.println("Returning to menu\n");
+		
 		menu(scnr);
 		
 	}
@@ -340,10 +355,7 @@ public class Main {
 		//TODO : test saveSettings() and loadSettings()
 		//saveSettings();
 		//loadSettings();
-		
 	
-
-		
 	}
 	
 	public static void camTest(Scanner scnr) throws IOException {

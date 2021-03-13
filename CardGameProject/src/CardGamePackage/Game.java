@@ -23,8 +23,7 @@ public class Game {
 		
 		for(int i = 0; i < Main.numOfCpuPlayers; i++) {
 			
-			cpuList.add(new CpuPlayer()); // TODO add name randomization 
-			// NOTE: name rng method already created in RNG, currently puts out "john smith"
+			cpuList.add(new CpuPlayer()); 
 			
 		}
 		
@@ -89,37 +88,50 @@ public class Game {
 		Main.playerMoney = user.getMoney();
 	}
 	
-	public void dealCards() { //TODO deal cards to all players ( have an arraylist of cpuplayers thats cycled through?) (User -> Any CPUs -> Dealer)
+	public void dealCards() { 
+	//my'kel (w cameron's help}
+	//dealers hand
+      for(int j = 0; j < 2; j++) {
+		dealer.getHand().addCard(deck.dealCard());
+		  if(j==1) {
+			  
+			  System.out.println();
+			  System.out.println("Dealer's second card is : ");
+			  System.out.println(dealer.getUpcard().getName());
+			  System.out.println();
+			  
+			  
+		  }else if (j==0){
+			  System.out.println(dealer.getName() + " deals themself one card face down.");
+		  }}
 		
+      //users hand
+      System.out.println(user.getName() + " user is dealt a: ");
+      System.out.println();
+      
+      for(int j = 0; j < 2; j++) {
+		user.getHand(0).addCard(deck.dealCard());
+		  System.out.println(user.getHand(0).getCard(j).getName());
+      }
+      System.out.println();
 		
+      //all cpu player hands
+     
+		for(int i = 0; i < (cpuList.size()); i++) {	
+             System.out.println(cpuList.get(i).getName() + " is dealt");
+             System.out.println();
+             
+             for(int k = 0; k < 2; k++) {
+			  
+				 cpuList.get(i).getHand(0).addCard(deck.dealCard());
+			 
+				 System.out.println(cpuList.get(i).getHand(0).getCard(k).getName());
+				 
+             }
+             System.out.println();
+          }
 		
-		for(int i = 0; i< deck.getSize(); i++) {
-			System.out.println(deck); 
-		}
-		
-		
-		
-		//Test zone open
-		
-           
-		
-		
-		//Test zone closed
-		
-		
-		
-		// print cards of players as they're dealed, except for dealer, whose upcard is printe
-		
-		// - Mykel
-		
-		// deal first card to dealer (hidden) (dealer.getHand().addCard(deck.dealCard())
-		// first card to player
-		// first card to each cpu (for loop on cpu, if no cpus, for loop wont run)
-		
-		// repeat for second card
-		
-		// print each card as it comes out? format being like ?? (Player Name): (Card Title)
-		
+		System.out.println();
 	}
 	
 	public void playHands() { // TODO
