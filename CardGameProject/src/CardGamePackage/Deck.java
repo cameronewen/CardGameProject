@@ -108,7 +108,7 @@ public class Deck {
 	
 // GETTERS AND SETTERS
 	
-	public int getDeckSize() {
+	public int getSize() {
 		
 		return cardDeck.size();
 		

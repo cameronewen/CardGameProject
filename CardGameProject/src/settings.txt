@@ -1,1 +1,7 @@
-chickens
+1000
+4
+0
+20
+2
+false
+You

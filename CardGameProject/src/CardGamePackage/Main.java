@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 
 
+
 public class Main {
 	
 
@@ -32,7 +33,7 @@ public class Main {
 		
 		System.out.println("Welcome to BlackJack\n");
 		
-		loadSettings(); //TODO create default settings file
+		//TODO create default settings file
 		
 		mykelTest();
 		//camTest(scnr);
@@ -74,9 +75,25 @@ public class Main {
 	}
 	
 	public static void saveSettings() throws IOException {
+	//  mykel
 		
-		  FileWriter settings = new FileWriter("src/settings.txt");// saves player name, money, and settings fields
-		settings.write("chickens");// for mykel
+		FileWriter settings = new FileWriter("src/settings.txt");// saves player name, money, and settings fields
+		
+		settings.write(playerMoney + "\n");// for mykel
+		settings.write(numOfDecks + "\n");
+		settings.write(numOfCpuPlayers + "\n");
+		settings.write(maxWager + "\n" );
+		settings.write(minWager + "\n" );
+		
+		if (softSeventeen) {
+			settings.write("true\n");
+		} else {
+			settings.write("false\n");
+		}
+		
+		settings.write(playerName + "\n");
+		
+		
 		
 		 settings.flush();
 	     settings.close();
@@ -84,19 +101,52 @@ public class Main {
 	
 	public static void loadSettings() throws IOException {
 		
-		// for mykel
-		FileInputStream fileInputStream = new FileInputStream("src/settings.txt");
-		Scanner fileInput = new Scanner(fileInputStream);
+		//  mykel
+		FileInputStream settingsInputStream = new FileInputStream("src/settings.txt");
+		Scanner settingsInput = new Scanner(settingsInputStream);
 		
-		while(fileInput.hasNextLine()) {
-			System.out.println(fileInput.nextLine());
+		 
+		
+		if(settingsInput.hasNextLine()) {
+			playerMoney = Integer.parseInt(settingsInput.nextLine());
 		}
+		if(settingsInput.hasNextLine()) {
+			numOfDecks = Integer.parseInt(settingsInput.nextLine());
+		}
+		if(settingsInput.hasNextLine()) {
+			numOfCpuPlayers = Integer.parseInt(settingsInput.nextLine());
+		}
+		if(settingsInput.hasNextLine()) {
+			maxWager = Integer.parseInt(settingsInput.nextLine());
+		}
+		if(settingsInput.hasNextLine()) {
+			minWager = Integer.parseInt(settingsInput.nextLine());
+		}
+		
+		if(settingsInput.hasNextLine()) {
+			if (settingsInput.nextLine().equals("true")) {
+				softSeventeen = true;
+				
+			}else if (settingsInput.nextLine().equals("false")) {
+				softSeventeen = false;
+				
+			}else {
+				System.out.println("Something went wrong with load/save methods");
+			}
+			
+			
+		}
+		
+		if(settingsInput.hasNextLine()) {
+			playerName = settingsInput.nextLine();
+		}
+		
 		
 		
 		System.out.println();
 		
-		fileInputStream.close();
-		fileInput.close();
+		settingsInputStream.close();
+		settingsInput.close();
 		
 		System.out.println();
 		
@@ -287,9 +337,9 @@ public class Main {
 // DEBUG METHODS
 	
 	public static void mykelTest() throws IOException {
-		
-		saveSettings();
-		loadSettings();
+		//TODO : test saveSettings() and loadSettings()
+		//saveSettings();
+		//loadSettings();
 		
 	
 

@@ -91,7 +91,12 @@ public class Game {
 	
 	public void dealCards() { //TODO deal cards to all players ( have an arraylist of cpuplayers thats cycled through?) (User -> Any CPUs -> Dealer)
 		
-		deck.shuffleDeck(); // note from cam: changed your setup bc theres a deck field created by the constructor just called deck.
+		
+		
+		for(int i = 0; i< deck.getSize(); i++) {
+			System.out.println(deck); 
+		}
+		
 		
 		
 		//Test zone open
