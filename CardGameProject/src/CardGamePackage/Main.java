@@ -34,8 +34,8 @@ public class Main {
 		
 		loadSettings(); //TODO create default settings file
 		
-		//mykelTest();
-		camTest(scnr);
+		mykelTest();
+		//camTest(scnr);
 		
 		//menu(scnr);
 		
@@ -80,9 +80,23 @@ public class Main {
 		
 	}
 	
-	public static void loadSettings() {
+	public static void loadSettings() throws IOException {
 		
 		// for mykel
+		FileInputStream fileInputStream = new FileInputStream("src/settings.txt");
+		Scanner fileInput = new Scanner(fileInputStream);
+		
+		while(fileInput.hasNextLine()) {
+			System.out.println(fileInput.nextLine());
+		}
+		
+		
+		System.out.println();
+		
+		fileInputStream.close();
+		fileInput.close();
+		
+		System.out.println();
 		
 	}
 	
@@ -270,11 +284,9 @@ public class Main {
 	
 // DEBUG METHODS
 	
-	public static void mykelTest() {
+	public static void mykelTest() throws IOException {
 		
-		currentGame = new Game();
-		
-		currentGame.dealCards();
+		loadSettings();
 		
 	
 
@@ -295,11 +307,6 @@ public class Main {
 		
 	}
 	
-	public static void dawsonTest() {
-		
-		
-		
-	}
 	
 	
 }
