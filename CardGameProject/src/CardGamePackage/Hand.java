@@ -99,6 +99,7 @@ public class Hand {
 		if(!doubledDown) {
 			
 			doubledDown = true;
+			isActive = false;
 			wager *= 2;
 			
 		} else {

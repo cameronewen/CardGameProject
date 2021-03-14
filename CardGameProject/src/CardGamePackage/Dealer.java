@@ -12,13 +12,15 @@ public class Dealer { // the "dealer" might not need to do much at all besides h
 	public Dealer() {
 		
 		dealerHand = new Hand();
-		name = RNG.randomName() + " (Dealer) "; // TODO add dealer name randomization ?
+		name = RNG.randomName() + " (Dealer)"; // TODO add dealer name randomization ?
 		
 	}
 	
 //METHODS
 	
 	public void playHand() {
+		
+		System.out.println("\n\nDEALER'S TURN\n");
 		
 		System.out.println("Dealer's upcard: " + dealerHand.getCard(1).getName() + "\n");
 		
