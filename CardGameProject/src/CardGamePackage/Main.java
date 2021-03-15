@@ -13,12 +13,11 @@ public class Main {
 	
 	// SETTINGS
 	
-	public static int numOfDecks = 4; // the default number of decks, changeable in settings
-	public static int numOfCpuPlayers = 6; // default is 1 on 1 with the dealer, changeable in options
-	
+	public static int numOfDecks = 4; 		// the default number of decks, changeable in settings
+	public static int numOfCpuPlayers = 6; 	// default is 1 on 1 with the dealer, changeable in options
 	public static int maxSplits = 2;
-	public static int maxWager = 20; // TODO add adjust in settings. maximum wager player can make.
-	public static int minWager = 2; // TODO add adjust in settings. minimum wager player can make.
+	public static int maxWager = 20; 		// maximum wager player can make.
+	public static int minWager = 2; 		// minimum wager player can make.
 	public static boolean softSeventeen = false; // changes what the dealer does when they have a 17 w/ an ace and a six
 	public static String playerName = "You";
 	
@@ -202,8 +201,6 @@ public class Main {
 	public static void settingsMenu(Scanner scnr) throws IOException {
 		
 		// - CAM
-		// TODO add surrendering on / off? (if added, tell cam to modify cpu logic)
-		// TODO add insurance/even money on / off ??? (if added, tell cam to modify cpu logic)
 		
 		boolean returnToMenu = false;
 		

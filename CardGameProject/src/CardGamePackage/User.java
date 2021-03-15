@@ -16,7 +16,7 @@ public class User extends Player{
 	
 	public void playHand() {
 		
-		// TODO
+		// TODO add player moves
 		// prints "It's Your Turn" or something
 		// reprints dealers upcard
 		// prints players current hand / total value ? 

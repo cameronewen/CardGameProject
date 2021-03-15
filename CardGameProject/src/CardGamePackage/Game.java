@@ -146,9 +146,9 @@ public class Game {
 		
 	}
 	
-	public void playHands() { // TODO
+	public void playHands() {
 		
-		// player first (method should be in user class)
+		user.playHand();
 		
 		for(int i = 0; i < cpuList.size(); i++) {
 			
@@ -157,9 +157,7 @@ public class Game {
 		}
 		
 		dealer.playHand();
-		
-		
-		
+			
 	}
 	
 	public void payout() {
@@ -203,11 +201,6 @@ public class Game {
 	
 	public void clearCpuList() {
 		cpuList.clear();
-	}
-
-	public void release() {
-		// TODO Auto-generated method stub
-		
 	}
 	
 }

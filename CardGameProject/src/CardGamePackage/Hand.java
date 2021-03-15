@@ -34,7 +34,7 @@ public class Hand {
 	
 // METHODS
 	
-	public void addCard(Card newCard) { // TODO (MAYBE) add debug statement for dealer hitting after card value >= 17
+	public void addCard(Card newCard) {
 		
 		if(!doubledDown && isActive && !isBusted) { // checks if hand can get new card (not dd / active / under 21)
 			

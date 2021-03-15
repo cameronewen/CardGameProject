@@ -23,8 +23,6 @@ public class Player { // this is not the user, this class includes npcs
 	
 // METHODS
 	
-	// TODO add more player actions (must apply to both CPU and User)
-	
 	public void splitHand(Hand handToSplit) {
 		// if the hands has only two cards AND the hand has been split less than twice AND the cards are equal
 		if( (handToSplit.getSize() == 2) && 
