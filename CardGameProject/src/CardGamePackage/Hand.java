@@ -50,18 +50,18 @@ public class Hand {
 			
 		} else { // debug statements, the player shouldn't have the option to hit if any of this is true
 			
-			System.out.println("No more cards can be added to this hand.");
+			Main.printlnPause("No more cards can be added to this hand.");
 			
 			if(doubledDown) {
-				System.out.println("DEBUG MESSAGE: Player attempted to add card while doubled down.");
+				Main.printlnPause("DEBUG MESSAGE: Player attempted to add card while doubled down.");
 			}
 			
 			if(isBusted) {
-				System.out.println("DEBUG MESSAGE: Player attempted to add card while busted.");
+				Main.printlnPause("DEBUG MESSAGE: Player attempted to add card while busted.");
 			}
 			
 			if(!isActive) {
-				System.out.println("DEBUG MESSAGE: Player attempted to add card to inactive hand.");
+				Main.printlnPause("DEBUG MESSAGE: Player attempted to add card to inactive hand.");
 			}
 			
 		}
@@ -104,7 +104,7 @@ public class Hand {
 			
 		} else {
 			
-			System.out.println("DEBUG MESSAGE: Hand has already been doubled down");
+			Main.printlnPause("DEBUG MESSAGE: Hand has already been doubled down");
 			
 		}
 		
@@ -129,7 +129,7 @@ public class Hand {
 
 				if(index >= hand.size()) {
 					
-					System.out.println("DEBUG: The error occured at Hand.checkForBust() while searching for an ace not set to 1.");
+					Main.printlnPause("DEBUG: The error occured at Hand.checkForBust() while searching for an ace not set to 1.");
 				
 				}
 				
@@ -142,7 +142,7 @@ public class Hand {
 			
 		} else if(value > 21 && numOfAces < numOfAcesSetToOne) {
 			
-			System.out.println("DEBUG MESSAGE: More aces set to 1 than in hand???");
+			Main.printlnPause("DEBUG MESSAGE: More aces set to 1 than in hand???");
 			
 		} 
 		

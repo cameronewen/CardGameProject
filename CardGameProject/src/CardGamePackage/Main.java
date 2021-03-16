@@ -14,12 +14,14 @@ public class Main {
 	// SETTINGS
 	
 	public static int numOfDecks = 4; 		// the default number of decks, changeable in settings
-	public static int numOfCpuPlayers = 6; 	// default is 1 on 1 with the dealer, changeable in options
+	public static int numOfCpuPlayers = 4; 	// default is 1 on 1 with the dealer, changeable in options
 	public static int maxSplits = 2;
 	public static int maxWager = 20; 		// maximum wager player can make.
 	public static int minWager = 2; 		// minimum wager player can make.
 	public static boolean softSeventeen = false; // changes what the dealer does when they have a 17 w/ an ace and a six
 	public static String playerName = "You";
+	
+	public static int textSpeed = 50; // change this to change printout speed (50 is a good speed for regular play)
 	
 	
 // MAIN
@@ -27,6 +29,8 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 	
 		Scanner scnr = new Scanner(System.in);
+		
+		//loadSettings();
 		
 		printlnPause("Welcome to BlackJack\n");
 		
@@ -105,6 +109,7 @@ public class Main {
 		
 		settings.flush();
 	    settings.close();
+	    
 	}
 	
 	public static void loadSettings() throws IOException {
@@ -277,8 +282,6 @@ public class Main {
 	
 	public static void playGame(Scanner scnr) throws IOException {
 		
-		printlnPause("playGame() called\n");
-		
 		currentGame = new Game();
 		
 		currentGame.placeWagers(scnr); // cam
@@ -292,8 +295,6 @@ public class Main {
 		currentGame = null;
 		
 		saveSettings(); // mykel 
-		
-		printlnPause("Returning to menu\n");
 		
 		menu(scnr);
 		
@@ -377,7 +378,7 @@ public class Main {
 		    
 		    try {
 		    	
-		        Thread.sleep(50);
+		        Thread.sleep(textSpeed);
 		        
 		    } catch(InterruptedException ex){
 		    	

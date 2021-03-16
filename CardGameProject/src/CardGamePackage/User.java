@@ -4,13 +4,13 @@ public class User extends Player{
 
 	public User(int money) {
 		
-		super(Main.playerName + " (You)", money);
+		super(Main.playerName, money);
 		
 	}
 	
 	public User() {
 		
-		super(Main.playerName + " (You)", Main.playerMoney);
+		super(Main.playerName, Main.playerMoney);
 		
 	}
 	

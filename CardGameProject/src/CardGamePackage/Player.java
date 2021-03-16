@@ -46,14 +46,14 @@ public class Player { // this is not the user, this class includes npcs
 			
 		} else {
 			
-			System.out.println("DEBUG: You can't split this hand!"); // this shouldn't happen in game, option shouldn't be offered if they can't split
+			Main.printlnPause("DEBUG: You can't split this hand!"); // this shouldn't happen in game, option shouldn't be offered if they can't split
 			
 			if( !(handToSplit.getTimesSplit() < Main.maxSplits) ) {
-				System.out.println("DEBUG: handToSplit.getTimesSplit() < Main.maxSplits");
+				Main.printlnPause("DEBUG: handToSplit.getTimesSplit() < Main.maxSplits");
 			}
 			
 			if(handToSplit.getCard(0).getValue() != handToSplit.getCard(1).getValue()) {
-				System.out.println("DEBUG: card 1 doesnt have same value as card 2");
+				Main.printlnPause("DEBUG: card 1 doesnt have same value as card 2");
 			}
 			
 		}
@@ -66,7 +66,7 @@ public class Player { // this is not the user, this class includes npcs
 	
 	public void surrender(Hand handToSurrender) {
 		handToSurrender.setActive(false);
-		System.out.println("DEBUG: give player back 1/2 wager");
+		Main.printlnPause("DEBUG: give player back 1/2 wager");
 	}
 	
 // GETTERS AND SETTERS

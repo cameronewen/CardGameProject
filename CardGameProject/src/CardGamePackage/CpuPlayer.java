@@ -21,12 +21,12 @@ public class CpuPlayer extends Player{
 			boolean surrendered = false;
 			
 			if(playerHands.size() > 1) {
-				Main.printlnPause("Hand " + (i + 1) + ":"); // DEBUG
+				Main.printlnPause("     " + "Hand " + (i + 1) + ":"); // DEBUG
 			}
 			
 			for(int x = 0; x < currHand.getSize(); x++) { // DEBUG PRINTOUT
 				
-				Main.printlnPause(currHand.getCard(x).getName());
+				Main.printlnPause("     " + currHand.getCard(x).getName());
 				
 			}
 			
@@ -42,13 +42,16 @@ public class CpuPlayer extends Player{
 							
 							splitHand(currHand);
 							
+							Main.printlnPause("     " + "Splits!\n");
+							Main.printlnPause("     New Hand:");
+							
 							for(int x = 0; x < currHand.getSize(); x++) { // debug printout
 								
-								Main.printlnPause(currHand.getCard(x).getName());
+								Main.printlnPause("     " + currHand.getCard(x).getName());
 								
 							}
 							
-							Main.printlnPause("Splits!");
+							System.out.println();
 	
 							
 						} else {
@@ -67,7 +70,7 @@ public class CpuPlayer extends Player{
 						
 						surrender(currHand);
 						madeMove = true;
-						Main.printlnPause("Surrender!\n");
+						Main.printlnPause("     " + "Surrender!\n");
 						surrendered = true;
 						
 					}
@@ -81,14 +84,14 @@ public class CpuPlayer extends Player{
 							Card card = Main.currentGame.getDeck().dealCard();
 							currHand.addCard(card);
 							
-							Main.printlnPause("Double Down.\n");
-							Main.printlnPause(card.getName() + " (" + currHand.getValue() + ")\n");
+							Main.printlnPause("     " + "Double Down.\n");
+							Main.printlnPause("     " + card.getName() + " (" + currHand.getValue() + ")\n");
 							
 							currHand.doubleDown();
 							
 							if(currHand.getValue() > 21) {
 								
-								Main.printlnPause("Busts!\n");
+								Main.printlnPause("     " + "Busts!\n");
 								
 							}
 							
@@ -96,7 +99,7 @@ public class CpuPlayer extends Player{
 							
 						} else {
 							
-							Main.printlnPause("Wanted to double down, but can't afford it.\n");
+							Main.printlnPause("     " + "Wanted to double down, but can't afford it.\n");
 							
 						}
 						
@@ -104,15 +107,15 @@ public class CpuPlayer extends Player{
 					
 					if(checkIfWillHit(currHand) && !currHand.isDoubledDown() && !surrendered) {
 						
-						Main.printlnPause("Hit!\n");
+						Main.printlnPause("     " + "Hit!\n");
 						Card newCard = Main.currentGame.getDeck().dealCard();
 						currHand.addCard(newCard);
-						Main.printlnPause(newCard.getName() + " (" + currHand.getValue() + ")\n");
+						Main.printlnPause("     " + newCard.getName() + " (" + currHand.getValue() + ")\n");
 						madeMove = true;
 						
 						if(currHand.getValue() > 21) {
 							
-							Main.printlnPause("Busts!\n");
+							Main.printlnPause("     " + "Busts!\n");
 							
 						}
 						
@@ -120,7 +123,7 @@ public class CpuPlayer extends Player{
 					
 					if(!madeMove) { // if no other move has been made, stand
 						
-						Main.printlnPause("Stand.\n");
+						Main.printlnPause("     " + "Stands.\n");
 						stood = true;
 						
 					}
@@ -260,7 +263,7 @@ public class CpuPlayer extends Player{
 		
 		} else {
 			
-			Main.printlnPause(name + " didn't have the money to split. (wager was " + cpuHand.getWager() + " and CPU had " + money + ")");
+			//Main.printlnPause(name + " didn't have the money to split. (wager was " + cpuHand.getWager() + " and CPU had " + money + ")");
 			shouldSplit = false;
 			
 		}

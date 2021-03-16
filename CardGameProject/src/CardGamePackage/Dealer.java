@@ -20,12 +20,12 @@ public class Dealer { // the "dealer" might not need to do much at all besides h
 	
 	public void playHand() {
 		
-		System.out.println("\n\nDEALER'S TURN\n");
+		Main.printlnPause("\n\n----DEALER'S TURN----\n");
 		
-		System.out.println("Dealer's upcard: " + dealerHand.getCard(1).getName() + "\n");
+		Main.printlnPause("     " + "Dealer's upcard: \n" + "     " + dealerHand.getCard(1).getName() + "\n");
 		
-		System.out.println("The dealer reveals hole card: \n");
-		System.out.println(dealerHand.getCard(0).getName() + " (" + dealerHand.getValue() + ")\n");
+		Main.printlnPause("     " + "The dealer reveals hole card: \n");
+		Main.printlnPause("     " + dealerHand.getCard(0).getName() + " (" + dealerHand.getValue() + ")\n");
 		
 		while(dealerHand.getValue() < 17 		|| 
 			 (  (dealerHand.getSize() == 2) 	&& 
@@ -36,18 +36,18 @@ public class Dealer { // the "dealer" might not need to do much at all besides h
 			
 			Card newCard = Main.currentGame.getDeck().dealCard();
 			dealerHand.addCard(newCard);
-			System.out.println("Dealer hits.\n");
-			System.out.println(newCard.getName() + " (" + dealerHand.getValue() + ")\n");
+			Main.printlnPause("     " + "Dealer hits.\n");
+			Main.printlnPause("     " + newCard.getName() + " (" + dealerHand.getValue() + ")\n");
 			
 		}
 		
 		if(dealerHand.getValue() >= 17 && dealerHand.getValue() < 22) {
 			
-			System.out.println("The dealer stands.");
+			Main.printlnPause("     " + "The dealer stands.");
 			
 		} else {
 			
-			System.out.println("The dealer busts.");
+			Main.printlnPause("     " + "The dealer busts.");
 			
 		}
 		

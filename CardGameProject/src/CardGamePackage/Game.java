@@ -35,7 +35,7 @@ public class Game {
 		
 		Random rng = new Random();
 		
-		Main.printlnPause("Wagers\n\nMinimum Wager: $" + Main.minWager + "\nMaximum Wager: $" + Main.maxWager);
+		Main.printlnPause("\n\n----PLACE WAGERS----\n\nMinimum Wager: $" + Main.minWager + "\nMaximum Wager: $" + Main.maxWager);
 		Main.printlnPause("\nCurrent Wallet: $" + user.getMoney() + "\n");
 		
 	
@@ -91,7 +91,7 @@ public class Game {
 	public void dealCards() { //my'kel (w cameron's help}
 		
 		// DEALER
-		Main.printlnPause("\n\nDealing\n");
+		Main.printlnPause("\n\n----DEAL HANDS----\n");
 		
       	for(int j = 0; j < 2; j++) {
     	  
@@ -99,11 +99,11 @@ public class Game {
 			
 			if(j == 1) {
 				  
-				Main.printlnPause(dealer.getUpcard().getName() + "\n");
+				Main.printlnPause("     Upcard: " + dealer.getUpcard().getName() + "\n");
 				  
 			} else {
 				  
-				Main.printlnPause(dealer.getName() + " places their first card face down.");
+				Main.printlnPause(dealer.getName() + " places their first card face down, then deals cards to the rest of the table.\n");
 				  
 			}
     	  
@@ -112,12 +112,12 @@ public class Game {
       	
       	// USER
       
-		Main.printlnPause("You're starting hand:\n");
+		Main.printlnPause("Your starting hand:\n");
 		      
 		for(int j = 0; j < 2; j++) { // deal user two cards, print each
 		    	  
 			user.getHand(0).addCard(deck.dealCard());
-			Main.printlnPause(user.getHand(0).getCard(j).getName());
+			Main.printlnPause("     " + user.getHand(0).getCard(j).getName());
 		    	  
 		}
       
@@ -134,7 +134,7 @@ public class Game {
              for(int k = 0; k < 2; k++) { // deals 2 cards to each cpu, prints out the cards
 			  
 				 cpuList.get(i).getHand(0).addCard(deck.dealCard()); // deal card
-				 Main.printlnPause(cpuList.get(i).getHand(0).getCard(k).getName()); // print card
+				 Main.printlnPause("     " + cpuList.get(i).getHand(0).getCard(k).getName()); // print card
 				 
              } // end interior for loop
              
@@ -147,6 +147,8 @@ public class Game {
 	}
 	
 	public void playHands() {
+		
+		System.out.println("\n\n----PLAY HANDS----\n");
 		
 		user.playHand();
 		
@@ -161,6 +163,8 @@ public class Game {
 	}
 	
 	public void payout() {
+		
+		System.out.println("\n\n----PAYOUTS----\n");
 		// announce players winnings if theyve made it this far / and cpu winnings?
 	}
 	
