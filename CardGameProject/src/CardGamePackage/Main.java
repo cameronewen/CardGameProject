@@ -30,11 +30,9 @@ public class Main {
 	
 		Scanner scnr = new Scanner(System.in);
 		
-		//loadSettings();
-		
 		printlnPause("Welcome to BlackJack\n");
 		
-		//TODO create default settings file
+		loadSettingsMenu(scnr);
 		
 		
 		//mykelTest();
@@ -203,6 +201,34 @@ public class Main {
 		
 	}
 	
+public static void loadSettingsMenu(Scanner scnr) throws IOException {
+		
+		int menuSelection; 
+		
+		printlnPause("Do you want to load previous settings or use default settings?");
+		printlnPause("1. Load saved settings\n"
+				 + "2. Use default settings\n");
+		
+		menuSelection = getIntFromScannerRanged(scnr, 1, 2);
+		        
+		switch(menuSelection) {
+
+			case 1:
+				loadSettings();
+				break;
+
+			case 2:
+				defaultSettings();
+				break;
+
+				
+			default:
+				printlnPause("Something went wrong with the input scanner.");
+
+		}
+		
+	}
+	
 	public static void settingsMenu(Scanner scnr) throws IOException {
 		
 		// - CAM
@@ -352,7 +378,7 @@ public class Main {
 // DEBUG METHODS
 	
 	public static void mykelTest() throws IOException {
-		//TODO : test saveSettings() and loadSettings()
+		
 		//saveSettings();
 		//loadSettings();
 	
