@@ -146,11 +146,11 @@ public class Game {
 		
 	}
 	
-	public void playHands() {
+	public void playHands(Scanner scnr) {
 		
 		System.out.println("\n\n----PLAY HANDS----\n");
 		
-		user.playHand();
+		user.playHand(scnr);
 		
 		for(int i = 0; i < cpuList.size(); i++) {
 			

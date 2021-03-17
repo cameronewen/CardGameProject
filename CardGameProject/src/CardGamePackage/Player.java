@@ -9,6 +9,7 @@ public class Player { // this is not the user, this class includes npcs
 	protected ArrayList<Hand> playerHands = new ArrayList<Hand>(); // players can have multiple hands thanks to splitting
 	protected String name;
 	protected int money;
+	protected int winnings;
 
 	
 // CONSTRUCTOR
@@ -40,6 +41,8 @@ public class Player { // this is not the user, this class includes npcs
 			handToSplit.addCard(Main.currentGame.getDeck().dealCard()); // adds a new card to each hand from the deck
 			newHand.addCard(Main.currentGame.getDeck().dealCard()); 
 			
+			money -= handToSplit.getWager();
+			
 			newHand.setWager(handToSplit.getWager()); // sets wager of new hand equal to first hand
 			
 			playerHands.add(newHand); // add the new hand to the players hands
@@ -49,7 +52,9 @@ public class Player { // this is not the user, this class includes npcs
 			Main.printlnPause("DEBUG: You can't split this hand!"); // this shouldn't happen in game, option shouldn't be offered if they can't split
 			
 			if( !(handToSplit.getTimesSplit() < Main.maxSplits) ) {
+				
 				Main.printlnPause("DEBUG: handToSplit.getTimesSplit() < Main.maxSplits");
+				
 			}
 			
 			if(handToSplit.getCard(0).getValue() != handToSplit.getCard(1).getValue()) {
@@ -65,8 +70,9 @@ public class Player { // this is not the user, this class includes npcs
 	}
 	
 	public void surrender(Hand handToSurrender) {
+		handToSurrender.setSurrendered(true);
 		handToSurrender.setActive(false);
-		Main.printlnPause("DEBUG: give player back 1/2 wager");
+		//Main.printlnPause("DEBUG: give player back 1/2 wager");
 	}
 	
 // GETTERS AND SETTERS

@@ -21,10 +21,10 @@ public class CpuPlayer extends Player{
 			boolean surrendered = false;
 			
 			if(playerHands.size() > 1) {
-				Main.printlnPause("     " + "Hand " + (i + 1) + ":"); // DEBUG
+				Main.printlnPause("     " + "Hand " + (i + 1) + ":");
 			}
 			
-			for(int x = 0; x < currHand.getSize(); x++) { // DEBUG PRINTOUT
+			for(int x = 0; x < currHand.getSize(); x++) { 
 				
 				Main.printlnPause("     " + currHand.getCard(x).getName());
 				

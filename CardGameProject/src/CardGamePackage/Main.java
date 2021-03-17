@@ -14,14 +14,14 @@ public class Main {
 	// SETTINGS
 	
 	public static int numOfDecks = 4; 		// the default number of decks, changeable in settings
-	public static int numOfCpuPlayers = 4; 	// default is 1 on 1 with the dealer, changeable in options
+	public static int numOfCpuPlayers = 1; 	// default is 1 on 1 with the dealer, changeable in options
 	public static int maxSplits = 2;
 	public static int maxWager = 20; 		// maximum wager player can make.
 	public static int minWager = 2; 		// minimum wager player can make.
 	public static boolean softSeventeen = false; // changes what the dealer does when they have a 17 w/ an ace and a six
 	public static String playerName = "You";
 	
-	public static int textSpeed = 50; // change this to change printout speed (50 is a good speed for regular play)
+	public static int textSpeed = 0; // change this to change printout speed (50 is a good speed for regular play)
 	
 	
 // MAIN
@@ -288,7 +288,7 @@ public class Main {
 		
 		currentGame.dealCards(); // mykel
 		
-		currentGame.playHands(); // cam
+		currentGame.playHands(scnr); // cam
 
 		currentGame.payout(); // cam
 		
@@ -366,7 +366,7 @@ public class Main {
 		
 		printlnPause(currentGame.getDealer().getHand().getCard(1).getName() + "\n");
 		
-		currentGame.playHands();
+		currentGame.playHands(scnr);
 		
 	}
 	

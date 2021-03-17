@@ -12,9 +12,11 @@ public class Hand {
 	private int numOfAcesSetToOne = 0;		// how many of those aces have had their value changed to 1
 	private boolean isBusted = false; 		// hand value goes over 21
 	private boolean doubledDown = false; 	// no more cards can be added to hand
-	private boolean isActive = true; 		// player surrender (diff from bust)
+	private boolean isActive = true; 		// card can be played any more this round. got a bit mixed up with other things i think
 	private boolean canBeSplit = false;		// checks if the deck can be split
 	private boolean hasBeenStoodOn = false;	// player stood on hand or not
+	private boolean blackjack = false;
+	private boolean surrendered = false;
 	private int timesSplit = 0; 			// number of times hand has been split
 	private int wager;						// the players wager on this hand
 	
@@ -89,6 +91,11 @@ public class Hand {
 		if(value > 21) {
 			
 			checkForBust();
+			
+		} else if(value == 21 && hand.size() == 2) {
+			
+			blackjack = true;
+			isActive = false;
 			
 		}
 		
@@ -285,6 +292,24 @@ public class Hand {
 
 	public void setHasBeenStoodOn(boolean hasBeenStoodOn) {
 		this.hasBeenStoodOn = hasBeenStoodOn;
+	}
+
+	public void setSurrendered(boolean b) {
+		
+		surrendered = b;
+		
+	}
+	
+	public boolean getSurrendered() {
+		return surrendered;
+	}
+
+	public boolean isBlackjack() {
+		return blackjack;
+	}
+
+	public void setBlackjack(boolean blackjack) {
+		this.blackjack = blackjack;
 	}
 	
 	
