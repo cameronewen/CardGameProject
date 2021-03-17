@@ -9,7 +9,7 @@ public class Main {
 // FIELDS
 	
 	public static Game currentGame;
-	public static int playerMoney = 1000;
+	public static double playerMoney = 1000;
 	
 	// SETTINGS
 	
@@ -121,7 +121,7 @@ public class Main {
 		 
 		
 		if(settingsInput.hasNextLine()) {
-			playerMoney = Integer.parseInt(settingsInput.nextLine());
+			playerMoney = Double.parseDouble(settingsInput.nextLine());
 		}
 		if(settingsInput.hasNextLine()) {
 			numOfDecks = Integer.parseInt(settingsInput.nextLine());
@@ -291,6 +291,8 @@ public class Main {
 		currentGame.playHands(scnr); // cam
 
 		currentGame.payout(); // cam
+		
+		Main.printlnPause("Thanks for playing! Returning to menu...\n\n");
 		
 		currentGame = null;
 		

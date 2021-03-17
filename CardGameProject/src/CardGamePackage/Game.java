@@ -55,7 +55,7 @@ public class Game {
 		if(user.getHand(0).getWager() > user.getMoney()) { // if wager is greater than the money they have, get num between min and player money
 			
 			Main.printlnPause("Slow down there, you don't have enough cash for that bet.");
-			user.getHand(0).setWager(Main.getIntFromScannerRanged(scnr, Main.minWager, user.getMoney()));
+			user.getHand(0).setWager(Main.getIntFromScannerRanged(scnr, Main.minWager, (int)user.getMoney()));
 			
 		}
 		
@@ -148,7 +148,7 @@ public class Game {
 	
 	public void playHands(Scanner scnr) {
 		
-		System.out.println("\n\n----PLAY HANDS----\n");
+		Main.printlnPause("\n\n----PLAY HANDS----\n");
 		
 		user.playHand(scnr);
 		
@@ -164,8 +164,47 @@ public class Game {
 	
 	public void payout() {
 		
-		System.out.println("\n\n----PAYOUTS----\n");
-		// announce players winnings if theyve made it this far / and cpu winnings?
+		double winnings;
+		
+		Main.printlnPause("\n\n----PAYOUTS----\n");
+		
+		// player
+		
+		winnings = user.calculateWinnings();
+		user.money += winnings;
+		
+		if(winnings > 0) {
+		
+			Main.printlnPause("You win $" + winnings + "!\n");
+			
+		} else {
+			
+			Main.printlnPause("You don't win anything.\n");
+			
+		}
+		
+		Main.playerMoney += winnings;
+		
+		// cpu winnings
+		
+		for(int i = 0; i < cpuList.size(); i++) {
+			
+			CpuPlayer currCpu = cpuList.get(i);
+			
+			winnings = currCpu.calculateWinnings();
+			
+			if(winnings > 0) {
+				
+				Main.printlnPause(currCpu.getName() + " wins $" + winnings + "!\n");
+				
+			} else {
+				
+				Main.printlnPause(currCpu.getName() + " didn't win anything.\n");
+				
+			}
+			
+		}
+		
 	}
 	
 	

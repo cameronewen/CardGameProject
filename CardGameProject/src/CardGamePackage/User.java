@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class User extends Player{
 
-	public User(int money) {
+	public User(double playerMoney) {
 		
-		super(Main.playerName, money);
+		super(Main.playerName, playerMoney);
 		
 	}
 	

@@ -8,17 +8,17 @@ public class Player { // this is not the user, this class includes npcs
 	
 	protected ArrayList<Hand> playerHands = new ArrayList<Hand>(); // players can have multiple hands thanks to splitting
 	protected String name;
-	protected int money;
+	protected double money;
 	protected int winnings;
 
 	
 // CONSTRUCTOR
 	
-	public Player(String name, int money) {
+	public Player(String name, double playerMoney) {
 		
 		playerHands.add(new Hand());
 		this.name = name;
-		this.money = money;
+		this.money = playerMoney;
 		
 	}
 	
@@ -75,6 +75,47 @@ public class Player { // this is not the user, this class includes npcs
 		//Main.printlnPause("DEBUG: give player back 1/2 wager");
 	}
 	
+	public int calculateWinnings() {
+		
+		int winnings = 0;
+		Hand currHand;
+		Hand dealerHand = Main.currentGame.getDealer().getHand();
+		
+		for(int i = 0; i < playerHands.size(); i++) {
+			
+			currHand = playerHands.get(i);
+			
+			if(currHand.isBlackjack() && !dealerHand.isBlackjack()) {
+				
+				winnings += currHand.getWager() * 1.5; //blackjack
+				
+			} else if(currHand.isBlackjack()) {
+				
+				winnings += currHand.getWager(); // blackjack but dealer got 21
+				
+			} else if(currHand.getSurrendered()) {
+				
+				winnings += currHand.getWager()/2.0; // 
+				
+			} else if(!currHand.isBusted() && currHand.getValue() > dealerHand.getValue()) {
+				
+				winnings += currHand.getWager() * 1.5;
+				
+			} else if(dealerHand.isBusted() && currHand.isActive()) {
+				
+				winnings += currHand.getWager();
+				
+			} else if(!currHand.isBusted() && currHand.getValue() == dealerHand.getValue()) {
+				
+				winnings += currHand.getWager();
+			}
+			
+		}
+		
+		
+		return winnings;
+	}
+	
 // GETTERS AND SETTERS
 	
 	public String getName() {
@@ -93,11 +134,15 @@ public class Player { // this is not the user, this class includes npcs
 		return playerHands.get(handIndex).getCard(cardIndex);
 	}
 	
-	public int getMoney() {
+	public int getPlayerHandsSize() {
+		return playerHands.size();
+	}
+	
+	public double getMoney() {
 		return money;
 	}
 	
-	public void setMoney(int money) {
+	public void setMoney(double money) {
 		
 		this.money = money;
 		
