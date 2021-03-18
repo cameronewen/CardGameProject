@@ -24,11 +24,11 @@ public class User extends Player{
 		
 		if(Main.currentGame.getDeck().getCardCount() > 0) { // adds + if its higher than 0.
 			
-			Main.printlnPause("Current card count: +" + Main.currentGame.getDeck().getCardCount());
+			Main.printlnPause("Current card count: +" + Main.currentGame.getDeck().getCardCount() + "\n");
 			
 		} else {
 			
-			Main.printlnPause("Current card count: " + Main.currentGame.getDeck().getCardCount());
+			Main.printlnPause("Current card count: " + Main.currentGame.getDeck().getCardCount() + "\n");
 			
 		}
 		
