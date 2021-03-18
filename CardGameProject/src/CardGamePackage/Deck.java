@@ -6,10 +6,9 @@ import java.util.Random;
 public class Deck {
 
 // FIELDS
-	
-	private final int STANDARD_DECK_SIZE = 52;
-	private ArrayList<Card> cardDeck = new ArrayList<Card>(52); // allocates space for 1 deck arraylist (it will expand on its own if more cards are added)
 
+	private ArrayList<Card> cardDeck = new ArrayList<Card>(52); // allocates space for 1 deck arraylist (it will expand on its own if more cards are added)
+	private int cardCount = 0;
 	
 // CONSTRUCTORS
 	
@@ -91,6 +90,8 @@ public class Deck {
 			
 		}
 		
+		cardCount = 0; // resets card count
+		
 	}
 	
 	
@@ -99,12 +100,40 @@ public class Deck {
 		
 		Card temp = cardDeck.get(0); // pulls bottom card
 		
+		cardCount(temp);
+		
 		cardDeck.remove(0); // removes it from the deck
 		
 		return temp; // returns bottom card
 		
 	}
 	
+	private void cardCount(Card card) {
+		
+		switch(card.getRank()) {
+		
+		case TWO:
+		case THREE:
+		case FOUR:
+		case FIVE:
+		case SIX:
+			
+			cardCount++;
+			break;
+			
+		case TEN:
+		case JACK:
+		case QUEEN:
+		case KING:
+			
+			cardCount--;
+			break;
+			
+		default:
+			break;
+		}
+		
+	}
 	
 // GETTERS AND SETTERS
 	
@@ -118,6 +147,10 @@ public class Deck {
 		
 		return cardDeck.get(index);
 		
+	}
+
+	public int getCardCount() {
+		return cardCount;
 	}
 	
 }

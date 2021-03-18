@@ -22,6 +22,16 @@ public class User extends Player{
 		
 		Main.printlnPause("Your turn: \n");
 		
+		if(Main.currentGame.getDeck().getCardCount() > 0) { // adds + if its higher than 0.
+			
+			Main.printlnPause("Current card count: +" + Main.currentGame.getDeck().getCardCount());
+			
+		} else {
+			
+			Main.printlnPause("Current card count: " + Main.currentGame.getDeck().getCardCount());
+			
+		}
+		
 		for(int i = 0; i < playerHands.size(); i ++) {
 			
 			Hand currHand = playerHands.get(i);
